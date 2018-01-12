@@ -1,7 +1,7 @@
 ;--------------------------------------------------------
 ; File Created by SN-SDCC : SinoMCU ANSI-C Compiler
 ; Version 1.1.0 (Dec 19 2017) (MINGW32)
-; This file was generated Thu Jan 04 10:24:33 2018
+; This file was generated Fri Jan 12 10:20:10 2018
 ;--------------------------------------------------------
 ; MC35 port for the RISC core
 ;--------------------------------------------------------
@@ -142,7 +142,7 @@ ___slong2fs	;Function start
 	BCLR	PFLAG,2
 	JBSET	PFLAG,2
 	GOTO	_00106_DS_
-;;genSkipc:3223: created from rifx:00DD608C
+;;genSkipc:3223: created from rifx:00DE608C
 ;;[ICODE] ../../libsdcc_mc35/slong2fs.c:35: 	if iTemp1 [k4 lr4:5 so:0]{ ia0 a2p0 re0 rm0 nos0 ru0 dp0}{char fixed} == 0 goto _iffalse_0($2)
 ;;[ICODE] ../../libsdcc_mc35/slong2fs.c:36: 	iTemp2 [k6 lr6:7 so:0]{ ia0 a2p0 re0 rm0 nos0 ru1 dp0}{long-int fixed}[r0x1004 r0x1005 r0x1006 r0x1007 ] = - iTemp0 [k2 lr3:12 so:0]{ ia0 a2p0 re1 rm0 nos0 ru0 dp0}{long-int fixed}{ sir@ ___slong2fs_sl_1_21}[r0x1000 r0x1001 r0x1002 r0x1003 ]
 ;	.line	36; "../../libsdcc_mc35/slong2fs.c"	return -__ulong2fs(-sl);

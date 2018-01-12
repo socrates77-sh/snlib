@@ -1,4 +1,4 @@
-gpasm-2.0.0_beta2 (Nov  6 2017)_moduint.asm       2017-12-20  12:01:19         PAGE  1
+gpasm-2.0.0_beta2 (Nov  6 2017)_moduint.asm       2018-1-12  10:25:28          PAGE  1
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -7,7 +7,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                       00001 ;--------------------------------------------------------
                       00002 ; File Created by SN-SDCC : SinoMCU ANSI-C Compiler
                       00003 ; Version 1.1.0 (Dec 19 2017) (MINGW32)
-                      00004 ; This file was generated Wed Dec 20 12:01:18 2017
+                      00004 ; This file was generated Fri Jan 12 10:25:28 2018
                       00005 ;--------------------------------------------------------
                       00006 ; MC35 port for the RISC core
                       00007 ;--------------------------------------------------------
@@ -168,7 +168,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
 002A                  00159 _00131_DS_
 002A   5A86           00160         JBSET   PFLAG,2
 002B   8000           00161         GOTO    _00111_DS_
-                      00162 ;;genSkipc:3223: created from rifx:00DD608C
+                      00162 ;;genSkipc:3223: created from rifx:00DE608C
                       00163 ;;[ICODE] ../../libsdcc_mc35/_moduint.c:46:     if iTemp7 [k12 lr23:24 so:0]{ ia0 a2p0 re0 rm0 nos0 ru0 dp0}{char fixed} != 0 goto _iffalse_1($7)
                       00164 ;;[ICODE] ../../libsdcc_mc35/_moduint.c:47:     iTemp0 [k2 lr3:33 so:0]{ ia0 a2p0 re1 rm0 nos0 ru0 dp0}{unsigned-int fixed}{ sir@ __moduint_a_1_1}[r0x1000 r0x1001 ] = iTemp0 [k2 lr3:33 so:0]{ ia0 a2p0 re1 rm0 nos0 ru0 dp0}{unsigned-int fixed}{ sir@ __moduint_a_1_1}[r0x1000 r0x1001 ] - iTemp1 [k4 lr4:31 so:0]{ ia0 a2p0 re1 rm0 nos0 ru0 dp0}{unsigned-int fixed}{ sir@ __moduint_b_1_1}[r0x1002 r0x1003 ]
                       00165 ;       .line   47; "../../libsdcc_mc35/_moduint.c"     a -= b;
@@ -214,7 +214,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                       00205 ;          64+    0 =    64 instructions (  128 byte)
                       00206 
                       00207         end
-gpasm-2.0.0_beta2 (Nov  6 2017)_moduint.asm       2017-12-20  12:01:19         PAGE  2
+gpasm-2.0.0_beta2 (Nov  6 2017)_moduint.asm       2018-1-12  10:25:28          PAGE  2
 
 
 SYMBOL TABLE

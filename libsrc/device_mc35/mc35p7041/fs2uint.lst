@@ -1,4 +1,4 @@
-gpasm-2.0.0_beta2 (Nov  6 2017)fs2uint.asm        2017-12-20  12:01:13         PAGE  1
+gpasm-2.0.0_beta2 (Nov  6 2017)fs2uint.asm        2018-1-12  10:25:21          PAGE  1
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -7,7 +7,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                       00001 ;--------------------------------------------------------
                       00002 ; File Created by SN-SDCC : SinoMCU ANSI-C Compiler
                       00003 ; Version 1.1.0 (Dec 19 2017) (MINGW32)
-                      00004 ; This file was generated Wed Dec 20 12:01:13 2017
+                      00004 ; This file was generated Fri Jan 12 10:25:20 2018
                       00005 ;--------------------------------------------------------
                       00006 ; MC35 port for the RISC core
                       00007 ;--------------------------------------------------------
@@ -182,7 +182,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
 002C                  00173 _00111_DS_
 002C   5A86           00174         JBSET   PFLAG,2
 002D   8000           00175         GOTO    _00106_DS_
-                      00176 ;;genSkipc:3223: created from rifx:00DD608C
+                      00176 ;;genSkipc:3223: created from rifx:00DE608C
                       00177 ;;[ICODE] ../../libsdcc_mc35/fs2uint.c:38:      if iTemp3 [k9 lr7:8 so:0]{ ia0 a2p0 re0 rm0 nos0 ru0 dp0}{char fixed} != 0 goto _iffalse_0($2)
                       00178 ;;[ICODE] ../../libsdcc_mc35/fs2uint.c:38:      ret 0xffff {const-unsigned-int literal}
 002E   2DFF           00179         MOVAI   0xff
@@ -214,7 +214,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                       00205 ;          54+    0 =    54 instructions (  108 byte)
                       00206 
                       00207         end
-gpasm-2.0.0_beta2 (Nov  6 2017)fs2uint.asm        2017-12-20  12:01:13         PAGE  2
+gpasm-2.0.0_beta2 (Nov  6 2017)fs2uint.asm        2018-1-12  10:25:21          PAGE  2
 
 
 SYMBOL TABLE

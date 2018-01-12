@@ -1,0 +1,536 @@
+gpasm-2.0.0_beta2 (Nov  6 2017)_divulong.asm      2018-1-12  13:52:49          PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00001 ;--------------------------------------------------------
+                      00002 ; File Created by SN-SDCC : SinoMCU ANSI-C Compiler
+                      00003 ; Version 1.1.0 (Dec 19 2017) (MINGW32)
+                      00004 ; This file was generated Fri Jan 12 13:52:49 2018
+                      00005 ;--------------------------------------------------------
+                      00006 ; MC30 port for the RISC core
+                      00007 ;--------------------------------------------------------
+                      00008 ;       .file   "../../libsdcc_mc30/_divulong.c"
+                      00009         list    p=0311
+                      00010         radix dec
+                      00011         include "0311.inc"
+                      00001                 LIST
+                      00002 ;mc30p6080.inc    Standard Header File, Version 1.00 by Sinomcu
+                      00326                 LIST
+                      00012 ;--------------------------------------------------------
+                      00013 ; external declarations
+                      00014 ;--------------------------------------------------------
+                      00015 
+                      00016         extern STK06
+                      00017         extern STK05
+                      00018         extern STK04
+                      00019         extern STK03
+                      00020         extern STK02
+                      00021         extern STK01
+                      00022         extern STK00
+                      00023 ;--------------------------------------------------------
+                      00024 ; global declarations
+                      00025 ;--------------------------------------------------------
+                      00026         global  __divulong
+                      00027 
+                      00028 ;--------------------------------------------------------
+                      00029 ; global definitions
+                      00030 ;--------------------------------------------------------
+                      00031 ;--------------------------------------------------------
+                      00032 ; absolute symbol definitions
+                      00033 ;--------------------------------------------------------
+                      00034 ;--------------------------------------------------------
+                      00035 ; compiler-defined variables
+                      00036 ;--------------------------------------------------------
+                      00037 UDL__divulong_0 udata
+0000                  00038 r0x1003 res     1
+0000                  00039 r0x1002 res     1
+0001                  00040 r0x1001 res     1
+0001                  00041 r0x1000 res     1
+0002                  00042 r0x1007 res     1
+0002                  00043 r0x1006 res     1
+0003                  00044 r0x1005 res     1
+0003                  00045 r0x1004 res     1
+0004                  00046 r0x1008 res     1
+0004                  00047 r0x1009 res     1
+0005                  00048 r0x100A res     1
+0005                  00049 r0x100B res     1
+0006                  00050 r0x100C res     1
+0006                  00051 r0x100D res     1
+0007                  00052 r0x100E res     1
+0007                  00053 r0x100F res     1
+                      00054 ;--------------------------------------------------------
+                      00055 ; initialized data
+                      00056 ;--------------------------------------------------------
+                      00057 
+                      00058 ;@Allocation info for local variables in function '_divulong'
+                      00059 ;@_divulong b                         Allocated to registers r0x1007 r0x1006 r0x1005 r0x1004 ;size:4
+                      00060 ;@_divulong a                         Allocated to registers r0x1003 r0x1002 r0x1001 r0x1000 ;size:4
+                      00061 ;@_divulong result                    Allocated to registers r0x1008 r0x1009 r0x100A r0x100B ;size:4
+                      00062 ;@_divulong mask                      Allocated to registers r0x100C r0x100D r0x100E r0x100F ;size:4
+                      00063 ;@end Allocation info for local variables in function '_divulong';
+                      00064 
+                      00065 ;--------------------------------------------------------
+                      00066 ; overlayable items in internal ram 
+                      00067 ;--------------------------------------------------------
+                      00068 ;       udata_ovr
+                      00069 ;--------------------------------------------------------
+                      00070 ; code
+                      00071 ;--------------------------------------------------------
+                      00072 code__divulong  code
+                      00073 ;***
+                      00074 ;  pBlock Stats: dbName = C
+                      00075 ;***
+                      00076 ;entry:  __divulong     ;Function start
+                      00077 ; 2 exit points
+                      00078 ;has an exit
+                      00079 ;23 compiler assigned registers:
+                      00080 ;   r0x1000
+                      00081 ;   STK00
+                      00082 ;   r0x1001
+                      00083 ;   STK01
+                      00084 ;   r0x1002
+                      00085 ;   STK02
+                      00086 ;   r0x1003
+                      00087 ;   STK03
+                      00088 ;   r0x1004
+                      00089 ;   STK04
+                      00090 ;   r0x1005
+                      00091 ;   STK05
+                      00092 ;   r0x1006
+                      00093 ;   STK06
+                      00094 ;   r0x1007
+                      00095 ;   r0x1008
+                      00096 ;   r0x1009
+                      00097 ;   r0x100A
+                      00098 ;   r0x100B
+                      00099 ;   r0x100C
+                      00100 ;   r0x100D
+                      00101 ;   r0x100E
+                      00102 ;   r0x100F
+                      00103 ;; Starting pCode block
+                      00104 ;;[ICODE] ../../libsdcc_mc30/_divulong.c:30:  _entry($12) :
+                      00105 ;;[ICODE] ../../libsdcc_mc30/_divulong.c:30:    proc __divulong [k1 lr0:0 so:0]{ ia0 a2p0 re0 rm0 nos0 ru0 dp0}{unsigned-long-int function ( unsigned-long-int fixed, unsigned-long-int fixed) fixed}
+0000                  00106 __divulong      ;Function start
+                      00107 ; 2 exit points
+                      00108 ;;[ICODE] ../../libsdcc_mc30/_divulong.c:30: iTemp0 [k2 lr3:32 so:0]{ ia0 a2p0 re1 rm0 nos0 ru0 dp0}{unsigned-long-int fixed}{ sir@ __divulong_a_1_1}[r0x1000 r0x1001 r0x1002 r0x1003 ] = recv __divulong [k1 lr0:0 so:0]{ ia0 a2p0 re0 rm0 nos0 ru0 dp0}{unsigned-long-int function ( unsigned-long-int fixed, unsigned-long-int fixed) fixed}
+                      00109 ;       .line   30; "../../libsdcc_mc30/_divulong.c"    _divulong (unsigned long a, unsigned long b)
+0000   1580           00110         MOVRA   r0x1000
+0001   1600           00111         MOVAR   STK00
+0002   1580           00112         MOVRA   r0x1001
+0003   1600           00113         MOVAR   STK01
+0004   1580           00114         MOVRA   r0x1002
+0005   1600           00115         MOVAR   STK02
+0006   1580           00116         MOVRA   r0x1003
+                      00117 ;;[ICODE] ../../libsdcc_mc30/_divulong.c:30: iTemp1 [k4 lr4:32 so:0]{ ia0 a2p0 re1 rm0 nos0 ru0 dp0}{unsigned-long-int fixed}{ sir@ __divulong_b_1_1}[r0x1004 r0x1005 r0x1006 r0x1007 ] = recv __divulong [k1 lr0:0 so:0]{ ia0 a2p0 re0 rm0 nos0 ru0 dp0}{unsigned-long-int function ( unsigned-long-int fixed, unsigned-long-int fixed) fixed}
+0007   1600           00118         MOVAR   STK03
+0008   1580           00119         MOVRA   r0x1004
+0009   1600           00120         MOVAR   STK04
+000A   1580           00121         MOVRA   r0x1005
+000B   1600           00122         MOVAR   STK05
+000C   1580           00123         MOVRA   r0x1006
+000D   1600           00124         MOVAR   STK06
+000E   1580           00125         MOVRA   r0x1007
+                      00126 ;;[ICODE] ../../libsdcc_mc30/_divulong.c:32:    iTemp2 [k6 lr5:34 so:0]{ ia0 a2p0 re1 rm0 nos0 ru0 dp0}{unsigned-long-int fixed}{ sir@ __divulong_result_1_2}[r0x1008 r0x1009 r0x100A r0x100B ] := 0x0 {unsigned-long-int literal}
+                      00127 ;       .line   32; "../../libsdcc_mc30/_divulong.c"    unsigned long result = 0;
+000F   1D80           00128         CLRR    r0x1008
+0010   1D80           00129         CLRR    r0x1009
+0011   1D80           00130         CLRR    r0x100A
+0012   1D80           00131         CLRR    r0x100B
+                      00132 ;;[ICODE] ../../libsdcc_mc30/_divulong.c:33:    iTemp3 [k8 lr6:32 so:0]{ ia0 a2p0 re1 rm0 nos0 ru0 dp0}{unsigned-long-int fixed}{ sir@ __divulong_mask_1_2}[r0x100C r0x100D r0x100E r0x100F ] := 0x1 {unsigned-long-int literal}
+                      00133 ;       .line   33; "../../libsdcc_mc30/_divulong.c"    unsigned long mask = 0x01;
+0013   0B01           00134         MOVAI   0x01
+0014   1580           00135         MOVRA   r0x100C
+0015   1D80           00136         CLRR    r0x100D
+0016   1D80           00137         CLRR    r0x100E
+0017   1D80           00138         CLRR    r0x100F
+                      00139 ;;[ICODE] ../../libsdcc_mc30/_divulong.c:36:    if iTemp1 [k4 lr4:32 so:0]{ ia0 a2p0 re1 rm0 nos0 ru0 dp0}{unsigned-long-int fixed}{ sir@ __divulong_b_1_1}[r0x1004 r0x1005 r0x1006 r0x1007 ] != 0 goto _whilecontinue_0($3)
+                      00140 ;       .line   36; "../../libsdcc_mc30/_divulong.c"    if (!b) return (unsigned long)-1;
+0018   1600           00141         MOVAR   r0x1007
+0019   1700           00142         ORAR    r0x1006
+001A   1700           00143         ORAR    r0x1005
+001B   1700           00144         ORAR    r0x1004
+001C   3103           00145         JBSET   STATUS,2
+001D   2800           00146         GOTO    _00107_DS_
+                      00147 ;;[ICODE] ../../libsdcc_mc30/_divulong.c:36:    ret 0xffffffff {unsigned-long-int literal}
+001E   0BFF           00148         MOVAI   0xff
+001F   1580           00149         MOVRA   STK02
+0020   0BFF           00150         MOVAI   0xff
+0021   1580           00151         MOVRA   STK01
+0022   0BFF           00152         MOVAI   0xff
+0023   1580           00153         MOVRA   STK00
+0024   0BFF           00154         MOVAI   0xff
+0025   2800           00155         GOTO    _00115_DS_
+                      00156 ;;[ICODE] ../../libsdcc_mc30/_divulong.c:40:  _whilecontinue_0($3) :
+                      00157 ;;[ICODE] ../../libsdcc_mc30/_divulong.c:40:    iTemp4 [k10 lr11:12 so:0]{ ia0 a2p0 re0 rm0 nos0 ru0 dp0}{unsigned-long-int register} = iTemp1 [k4 lr4:32 so:0]{ ia0 a2p0 re1 rm0 nos0 ru0 dp0}{unsigned-long-int fixed}{ sir@ __divulong_b_1_1}[r0x1004 r0x1005 r0x1006 r0x1007 ] & 0x80000000 {unsigned-long-int literal}
+0026                  00158 _00107_DS_
+                      00159 ;       .line   40; "../../libsdcc_mc30/_divulong.c"    while (!(b & (1UL << (8*sizeof(unsigned long)-1)))) {
+0026   3780           00160         JBCLR   r0x1004,7
+0027   2800           00161         GOTO    _00112_DS_
+                      00162 ;;[ICODE] ../../libsdcc_mc30/_divulong.c:40:    if iTemp4 [k10 lr11:12 so:0]{ ia0 a2p0 re0 rm0 nos0 ru0 dp0}{unsigned-long-int register} != 0 goto _whilecontinue_1($8)
+                      00163 ;;[ICODE] ../../libsdcc_mc30/_divulong.c:41:    iTemp1 [k4 lr4:32 so:0]{ ia0 a2p0 re1 rm0 nos0 ru0 dp0}{unsigned-long-int fixed}{ sir@ __divulong_b_1_1}[r0x1004 r0x1005 r0x1006 r0x1007 ] = iTemp1 [k4 lr4:32 so:0]{ ia0 a2p0 re1 rm0 nos0 ru0 dp0}{unsigned-long-int fixed}{ sir@ __divulong_b_1_1}[r0x1004 r0x1005 r0x1006 r0x1007 ] << 0x1 {const-unsigned-char literal}
+                      00164 ;       .line   41; "../../libsdcc_mc30/_divulong.c"    b <<= 1;
+0028   3C03           00165         BCLR    STATUS,0
+0029   1480           00166         RLR     r0x1007
+002A   1480           00167         RLR     r0x1006
+002B   1480           00168         RLR     r0x1005
+002C   1480           00169         RLR     r0x1004
+                      00170 ;;[ICODE] ../../libsdcc_mc30/_divulong.c:42:    iTemp3 [k8 lr6:32 so:0]{ ia0 a2p0 re1 rm0 nos0 ru0 dp0}{unsigned-long-int fixed}{ sir@ __divulong_mask_1_2}[r0x100C r0x100D r0x100E r0x100F ] = iTemp3 [k8 lr6:32 so:0]{ ia0 a2p0 re1 rm0 nos0 ru0 dp0}{unsigned-long-int fixed}{ sir@ __divulong_mask_1_2}[r0x100C r0x100D r0x100E r0x100F ] << 0x1 {const-unsigned-char literal}
+                      00171 ;       .line   42; "../../libsdcc_mc30/_divulong.c"    mask <<= 1;
+002D   3C03           00172         BCLR    STATUS,0
+002E   1480           00173         RLR     r0x100C
+002F   1480           00174         RLR     r0x100D
+0030   1480           00175         RLR     r0x100E
+0031   1480           00176         RLR     r0x100F
+                      00177 ;;[ICODE] ../../libsdcc_mc30/_divulong.c:42:     goto _whilecontinue_0($3)
+0032   2800           00178         GOTO    _00107_DS_
+                      00179 ;;[ICODE] ../../libsdcc_mc30/_divulong.c:47:  _whilecontinue_1($8) :
+                      00180 ;;[ICODE] ../../libsdcc_mc30/_divulong.c:47:    if iTemp3 [k8 lr6:32 so:0]{ ia0 a2p0 re1 rm0 nos0 ru0 dp0}{unsigned-long-int fixed}{ sir@ __divulong_mask_1_2}[r0x100C r0x100D r0x100E r0x100F ] == 0 goto _whilebreak_1($10)
+0033                  00181 _00112_DS_
+                      00182 ;       .line   47; "../../libsdcc_mc30/_divulong.c"    while (mask) {
+0033   1600           00183         MOVAR   r0x100C
+0034   1700           00184         ORAR    r0x100D
+0035   1700           00185         ORAR    r0x100E
+0036   1700           00186         ORAR    r0x100F
+0037   3503           00187         JBCLR   STATUS,2
+0038   2800           00188         GOTO    _00114_DS_
+                      00189 ;;[ICODE] ../../libsdcc_mc30/_divulong.c:48:    iTemp7 [k13 lr21:22 so:0]{ ia0 a2p0 re0 rm0 nos0 ru0 dp0}{char fixed} = iTemp0 [k2 lr3:32 so:0]{ ia0 a2p0 re1 rm0 nos0 ru0 dp0}{unsigned-long-int fixed}{ sir@ __divulong_a_1_1}[r0x1000 r0x1001 r0x1002 r0x1003 ] < iTemp1 [k4 lr4:32 so:0]{ ia0 a2p0 re1 rm0 nos0 ru0 dp0}{unsigned-long-int fixed}{ sir@ __divulong_b_1_1}[r0x1004 r0x1005 r0x1006 r0x1007 ]
+                      00190 ;       .line   48; "../../libsdcc_mc30/_divulong.c"    if (a >= b) {
+0039   1600           00191         MOVAR   r0x1004
+003A   1200           00192         RSUBAR  r0x1000
+003B   3103           00193         JBSET   STATUS,2
+003C   2800           00194         GOTO    _00129_DS_
+003D   1600           00195         MOVAR   r0x1005
+003E   1200           00196         RSUBAR  r0x1001
+003F   3103           00197         JBSET   STATUS,2
+0040   2800           00198         GOTO    _00129_DS_
+0041   1600           00199         MOVAR   r0x1006
+0042   1200           00200         RSUBAR  r0x1002
+0043   3103           00201         JBSET   STATUS,2
+0044   2800           00202         GOTO    _00129_DS_
+0045   1600           00203         MOVAR   r0x1007
+0046   1200           00204         RSUBAR  r0x1003
+0047                  00205 _00129_DS_
+0047   3003           00206         JBSET   STATUS,0
+0048   2800           00207         GOTO    _00111_DS_
+                      00208 ;;genSkipc:3195: created from rifx:00DE608C
+                      00209 ;;[ICODE] ../../libsdcc_mc30/_divulong.c:48:    if iTemp7 [k13 lr21:22 so:0]{ ia0 a2p0 re0 rm0 nos0 ru0 dp0}{char fixed} != 0 goto _iffalse_1($7)
+                      00210 ;;[ICODE] ../../libsdcc_mc30/_divulong.c:49:    iTemp2 [k6 lr5:34 so:0]{ ia0 a2p0 re1 rm0 nos0 ru0 dp0}{unsigned-long-int fixed}{ sir@ __divulong_result_1_2}[r0x1008 r0x1009 r0x100A r0x100B ] = iTemp2 [k6 lr5:34 so:0]{ ia0 a2p0 re1 rm0 nos0 ru0 dp0}{unsigned-long-int fixed}{ sir@ __divulong_result_1_2}[r0x1008 r0x1009 r0x100A r0x100B ] + iTemp3 [k8 lr6:32 so:0]{ ia0 a2p0 re1 rm0 nos0 ru0 dp0}{unsigned-long-int fixed}{ sir@ __divulong_mask_1_2}[r0x100C r0x100D r0x100E r0x100F ]
+                      00211 ;       .line   49; "../../libsdcc_mc30/_divulong.c"    result += mask;
+0049   1600           00212         MOVAR   r0x100C
+004A   1F80           00213         ADDRA   r0x1008
+004B   1600           00214         MOVAR   r0x100D
+004C   3403           00215         JBCLR   STATUS,0
+004D   1800           00216         JZAR    r0x100D
+004E   1F80           00217         ADDRA   r0x1009
+004F   1600           00218         MOVAR   r0x100E
+0050   3403           00219         JBCLR   STATUS,0
+0051   1800           00220         JZAR    r0x100E
+0052   1F80           00221         ADDRA   r0x100A
+0053   1600           00222         MOVAR   r0x100F
+0054   3403           00223         JBCLR   STATUS,0
+0055   1800           00224         JZAR    r0x100F
+0056   1F80           00225         ADDRA   r0x100B
+                      00226 ;;[ICODE] ../../libsdcc_mc30/_divulong.c:50:    iTemp0 [k2 lr3:32 so:0]{ ia0 a2p0 re1 rm0 nos0 ru0 dp0}{unsigned-long-int fixed}{ sir@ __divulong_a_1_1}[r0x1000 r0x1001 r0x1002 r0x1003 ] = iTemp0 [k2 lr3:32 so:0]{ ia0 a2p0 re1 rm0 nos0 ru0 dp0}{unsigned-long-int fixed}{ sir@ __divulong_a_1_1}[r0x1000 r0x1001 r0x1002 r0x1003 ] - iTemp1 [k4 lr4:32 so:0]{ ia0 a2p0 re1 rm0 nos0 ru0 dp0}{unsigned-long-int fixed}{ sir@ __divulong_b_1_1}[r0x1004 r0x1005 r0x1006 r0x1007 ]
+                      00227 ;       .line   50; "../../libsdcc_mc30/_divulong.c"    a -= b;
+0057   1600           00228         MOVAR   r0x1007
+0058   1280           00229         RSUBRA  r0x1003
+0059   1600           00230         MOVAR   r0x1006
+005A   3003           00231         JBSET   STATUS,0
+005B   1800           00232         JZAR    r0x1006
+005C   1280           00233         RSUBRA  r0x1002
+005D   1600           00234         MOVAR   r0x1005
+005E   3003           00235         JBSET   STATUS,0
+005F   1800           00236         JZAR    r0x1005
+0060   1280           00237         RSUBRA  r0x1001
+0061   1600           00238         MOVAR   r0x1004
+0062   3003           00239         JBSET   STATUS,0
+0063   1800           00240         JZAR    r0x1004
+0064   1280           00241         RSUBRA  r0x1000
+                      00242 ;;[ICODE] ../../libsdcc_mc30/_divulong.c:50:  _iffalse_1($7) :
+                      00243 ;;[ICODE] ../../libsdcc_mc30/_divulong.c:52:    iTemp1 [k4 lr4:32 so:0]{ ia0 a2p0 re1 rm0 nos0 ru0 dp0}{unsigned-long-int fixed}{ sir@ __divulong_b_1_1}[r0x1004 r0x1005 r0x1006 r0x1007 ] = iTemp1 [k4 lr4:32 so:0]{ ia0 a2p0 re1 rm0 nos0 ru0 dp0}{unsigned-long-int fixed}{ sir@ __divulong_b_1_1}[r0x1004 r0x1005 r0x1006 r0x1007 ] >> 0x1 {const-unsigned-char literal}
+                      00244 ;;shiftRight_Left2ResultLit:5216: shCount=1, size=4, sign=0, same=1, offr=0
+0065                  00245 _00111_DS_
+                      00246 ;       .line   52; "../../libsdcc_mc30/_divulong.c"    b >>= 1;
+0065   3C03           00247         BCLR    STATUS,0
+0066   1380           00248         RRR     r0x1004
+0067   1380           00249         RRR     r0x1005
+0068   1380           00250         RRR     r0x1006
+0069   1380           00251         RRR     r0x1007
+                      00252 ;;[ICODE] ../../libsdcc_mc30/_divulong.c:53:    iTemp3 [k8 lr6:32 so:0]{ ia0 a2p0 re1 rm0 nos0 ru0 dp0}{unsigned-long-int fixed}{ sir@ __divulong_mask_1_2}[r0x100C r0x100D r0x100E r0x100F ] = iTemp3 [k8 lr6:32 so:0]{ ia0 a2p0 re1 rm0 nos0 ru0 dp0}{unsigned-long-int fixed}{ sir@ __divulong_mask_1_2}[r0x100C r0x100D r0x100E r0x100F ] >> 0x1 {const-unsigned-char literal}
+                      00253 ;;shiftRight_Left2ResultLit:5216: shCount=1, size=4, sign=0, same=1, offr=0
+                      00254 ;       .line   53; "../../libsdcc_mc30/_divulong.c"    mask >>= 1;
+006A   3C03           00255         BCLR    STATUS,0
+006B   1380           00256         RRR     r0x100F
+006C   1380           00257         RRR     r0x100E
+006D   1380           00258         RRR     r0x100D
+006E   1380           00259         RRR     r0x100C
+                      00260 ;;[ICODE] ../../libsdcc_mc30/_divulong.c:53:     goto _whilecontinue_1($8)
+006F   2800           00261         GOTO    _00112_DS_
+                      00262 ;;[ICODE] ../../libsdcc_mc30/_divulong.c:53:  _whilebreak_1($10) :
+                      00263 ;;[ICODE] ../../libsdcc_mc30/_divulong.c:56:    ret iTemp2 [k6 lr5:34 so:0]{ ia0 a2p0 re1 rm0 nos0 ru0 dp0}{unsigned-long-int fixed}{ sir@ __divulong_result_1_2}[r0x1008 r0x1009 r0x100A r0x100B ]
+0070                  00264 _00114_DS_
+                      00265 ;       .line   56; "../../libsdcc_mc30/_divulong.c"    return result;
+0070   1600           00266         MOVAR   r0x1008
+0071   1580           00267         MOVRA   STK02
+0072   1600           00268         MOVAR   r0x1009
+0073   1580           00269         MOVRA   STK01
+0074   1600           00270         MOVAR   r0x100A
+0075   1580           00271         MOVRA   STK00
+0076   1600           00272         MOVAR   r0x100B
+                      00273 ;;[ICODE] ../../libsdcc_mc30/_divulong.c:56:  _return($11) :
+                      00274 ;;[ICODE] ../../libsdcc_mc30/_divulong.c:56:    eproc __divulong [k1 lr0:0 so:0]{ ia0 a2p0 re0 rm0 nos0 ru0 dp0}{unsigned-long-int function ( unsigned-long-int fixed, unsigned-long-int fixed) fixed}
+0077                  00275 _00115_DS_
+0077   000C           00276         RETURN  
+                      00277 ; exit point of __divulong
+                      00278 
+                      00279 
+                      00280 ;       code size estimation:
+                      00281 ;         120+    0 =   120 instructions (  240 byte)
+                      00282 
+                      00283         end
+gpasm-2.0.0_beta2 (Nov  6 2017)_divulong.asm      2018-1-12  13:52:49          PAGE  2
+
+
+SYMBOL TABLE
+  LABEL                             VALUE
+
+BUZE                              00000005
+C                                 00000000
+DBLCK                             00000004
+DC                                00000001
+DDR0                              00000045
+DDR00                             00000000
+DDR01                             00000001
+DDR02                             00000002
+DDR03                             00000003
+DDR1                              00000046
+DDR10                             00000000
+DDR11                             00000001
+DDR12                             00000002
+DDR13                             00000003
+DDR14                             00000004
+DDR15                             00000005
+DDR16                             00000006
+DDR17                             00000007
+EIS                               00000006
+FSR                               00000004
+FSR0                              00000000
+FSR1                              00000001
+FSR2                              00000002
+FSR3                              00000003
+FSR4                              00000004
+FSR5                              00000005
+GIE                               00000007
+INDF                              00000000
+INDF0                             00000000
+INDF1                             00000001
+INDF2                             00000002
+INDF3                             00000003
+INDF4                             00000004
+INDF5                             00000005
+INDF6                             00000006
+INDF7                             00000007
+INTECON                           0000000E
+INTFLAG                           0000000F
+INTIE                             00000002
+INTIF                             00000002
+INTOM                             00000006
+KBIE                              00000001
+KBIF                              00000001
+KBIM                              00000009
+KBIM0                             00000000
+KBIM1                             00000001
+KBIM2                             00000002
+KBIM3                             00000003
+KBIM4                             00000004
+KBIM5                             00000005
+KBIM6                             00000006
+KBIM7                             00000007
+LVDEN                             00000000
+LVDF                              00000005
+LVDSEL0                           00000001
+LVDSEL1                           00000002
+LVDSEL2                           00000003
+LVDSEL3                           00000004
+MCR                               00000008
+ODCON                             0000000C
+P0                                00000005
+P00D                              00000000
+P00PD                             00000000
+P01D                              00000001
+P01PD                             00000001
+P02D                              00000002
+P02PD                             00000002
+P03D                              00000003
+P03PD                             00000003
+P1                                00000006
+P10D                              00000000
+P10OD                             00000000
+P10PD                             00000004
+P10PU                             00000000
+P11D                              00000001
+P11OD                             00000001
+P11PD                             00000005
+P11PU                             00000001
+P12D                              00000002
+P12OD                             00000002
+P12PD                             00000006
+P12PU                             00000002
+P13D                              00000003
+P13PU                             00000003
+P14D                              00000004
+P14OD                             00000004
+P14PU                             00000004
+P15D                              00000005
+P15OD                             00000005
+P15PU                             00000005
+P16D                              00000006
+P16OD                             00000006
+P16PU                             00000006
+P17D                              00000007
+P17OD                             00000007
+P17PU                             00000007
+PC0                               00000000
+PC1                               00000001
+PC2                               00000002
+PC3                               00000003
+PC4                               00000004
+PC5                               00000005
+PC6                               00000006
+PC7                               00000007
+PCH0                              00000000
+PCH1                              00000001
+PCL                               00000002
+PCLATH                            0000000A
+PD                                00000003
+PDCON                             0000000B
+PMW0OE                            00000007
+PMW1E                             00000001
+PUCON                             0000000D
+PWM0E                             00000006
+PWM1OE                            00000006
+PWM2E                             00000000
+PWM2OE                            00000005
+PWMCR                             00000048
+PWMINV                            00000002
+PWMMD                             00000003
+RST                               00000007
+STATUS                            00000003
+STK00                             00000000
+STK01                             00000000
+STK02                             00000000
+STK03                             00000000
+STK04                             00000000
+STK05                             00000000
+STK06                             00000000
+T0C0                              00000000
+T0C1                              00000001
+T0C2                              00000002
+T0C3                              00000003
+T0C4                              00000004
+T0C5                              00000005
+T0C6                              00000006
+T0C7                              00000007
+T0CNT                             00000001
+T0CR                              00000041
+T0IE                              00000000
+T0IF                              00000000
+T0PR0                             00000000
+T0PR1                             00000001
+T0PR2                             00000002
+T0PTA                             00000003
+T0PTS                             00000005
+T0SE                              00000004
+T1C0                              00000000
+T1C1                              00000001
+T1C2                              00000002
+T1C3                              00000003
+T1C4                              00000004
+T1C5                              00000005
+T1C6                              00000006
+T1C7                              00000007
+T1CNT                             0000004D
+T1CR                              0000004C
+T1DAT0                            0000004F
+T1DAT00                           00000000
+T1DAT01                           00000001
+T1DAT02                           00000002
+T1DAT03                           00000003
+T1DAT04                           00000004
+T1DAT05                           00000005
+T1DAT06                           00000006
+T1DAT07                           00000007
+T1DAT1                            00000049
+T1DAT10                           00000000
+T1DAT11                           00000001
+T1DAT12                           00000002
+T1DAT13                           00000003
+T1DAT14                           00000004
+T1DAT15                           00000005
+T1DAT16                           00000006
+T1DAT17                           00000007
+T1DAT2                            0000004A
+T1DAT20                           00000000
+T1DAT21                           00000001
+T1DAT22                           00000002
+T1DAT23                           00000003
+T1DAT24                           00000004
+T1DAT25                           00000005
+T1DAT26                           00000006
+T1DAT27                           00000007
+T1IE                              00000001
+T1IF                              00000000
+T1LOAD                            0000004E
+T1LOAD0                           00000000
+T1LOAD1                           00000001
+T1LOAD2                           00000002
+T1LOAD3                           00000003
+T1LOAD4                           00000004
+T1LOAD5                           00000005
+T1LOAD6                           00000006
+T1LOAD7                           00000007
+T1PR0                             00000000
+T1PR1                             00000001
+T1PR2                             00000002
+T1PTS0                            00000003
+T1PTS1                            00000004
+TBS                               00000007
+TC1EN                             00000007
+TM0CR                             0000004B
+TO                                00000004
+WDTEN                             00000007
+Z                                 00000002
+_00107_DS_                        00000026
+_00111_DS_                        00000065
+_00112_DS_                        00000033
+_00114_DS_                        00000070
+_00115_DS_                        00000077
+_00129_DS_                        00000047
+_CONFIG0                          00002000
+_CONFIG1                          00002001
+__30P011                          00000001
+__divulong                        00000000
+r0x1000                           00000003
+r0x1001                           00000002
+r0x1002                           00000001
+r0x1003                           00000000
+r0x1004                           00000007
+r0x1005                           00000006
+r0x1006                           00000005
+r0x1007                           00000004
+r0x1008                           00000008
+r0x1009                           00000009
+r0x100A                           0000000A
+r0x100B                           0000000B
+r0x100C                           0000000C
+r0x100D                           0000000D
+r0x100E                           0000000E
+r0x100F                           0000000F
+
+Errors   :     0
+Warnings :     0 reported,     0 suppressed
+Messages :     0 reported,     0 suppressed
+
+

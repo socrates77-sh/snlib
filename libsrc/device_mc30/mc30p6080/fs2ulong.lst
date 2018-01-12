@@ -1,0 +1,627 @@
+gpasm-2.0.0_beta2 (Nov  6 2017)fs2ulong.asm       2018-1-12  13:52:53          PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00001 ;--------------------------------------------------------
+                      00002 ; File Created by SN-SDCC : SinoMCU ANSI-C Compiler
+                      00003 ; Version 1.1.0 (Dec 19 2017) (MINGW32)
+                      00004 ; This file was generated Fri Jan 12 13:52:53 2018
+                      00005 ;--------------------------------------------------------
+                      00006 ; MC30 port for the RISC core
+                      00007 ;--------------------------------------------------------
+                      00008 ;       .file   "../../libsdcc_mc30/fs2ulong.c"
+                      00009         list    p=0311
+                      00010         radix dec
+                      00011         include "0311.inc"
+                      00001                 LIST
+                      00002 ;mc30p6080.inc    Standard Header File, Version 1.00 by Sinomcu
+                      00326                 LIST
+                      00012 ;--------------------------------------------------------
+                      00013 ; external declarations
+                      00014 ;--------------------------------------------------------
+                      00015         extern  ___uchar2fs
+                      00016         extern  ___schar2fs
+                      00017         extern  ___uint2fs
+                      00018         extern  ___sint2fs
+                      00019         extern  ___ulong2fs
+                      00020         extern  ___slong2fs
+                      00021         extern  ___fs2uchar
+                      00022         extern  ___fs2schar
+                      00023         extern  ___fs2uint
+                      00024         extern  ___fs2sint
+                      00025         extern  ___fs2slong
+                      00026         extern  ___fsadd
+                      00027         extern  ___fssub
+                      00028         extern  ___fsmul
+                      00029         extern  ___fsdiv
+                      00030         extern  ___fslt
+                      00031         extern  ___fseq
+                      00032         extern  ___fsneq
+                      00033         extern  ___fsgt
+                      00034 
+                      00035         extern STK06
+                      00036         extern STK05
+                      00037         extern STK04
+                      00038         extern STK03
+                      00039         extern STK02
+                      00040         extern STK01
+                      00041         extern STK00
+                      00042 ;--------------------------------------------------------
+                      00043 ; global declarations
+                      00044 ;--------------------------------------------------------
+                      00045         global  ___fs2ulong
+                      00046 
+                      00047 ;--------------------------------------------------------
+                      00048 ; global definitions
+                      00049 ;--------------------------------------------------------
+                      00050 ;--------------------------------------------------------
+                      00051 ; absolute symbol definitions
+                      00052 ;--------------------------------------------------------
+                      00053 ;--------------------------------------------------------
+                      00054 ; compiler-defined variables
+                      00055 ;--------------------------------------------------------
+                      00056 UDL_fs2ulong_0  udata
+0000                  00057 r0x1007 res     1
+0000                  00058 r0x1006 res     1
+0001                  00059 r0x1005 res     1
+0001                  00060 r0x1004 res     1
+0002                  00061 r0x1008 res     1
+0002                  00062 r0x1009 res     1
+0003                  00063 r0x100A res     1
+0003                  00064 r0x100B res     1
+0004                  00065 r0x100C res     1
+0004                  00066 r0x100D res     1
+0005                  00067 r0x100E res     1
+0005                  00068 r0x100F res     1
+0006                  00069 ___fs2ulong_fl1_1_22    res     4
+                      00070 ;--------------------------------------------------------
+                      00071 ; initialized data
+                      00072 ;--------------------------------------------------------
+                      00073 
+                      00074 ;@Allocation info for local variables in function '__fs2ulong'
+                      00075 ;@__fs2ulong __uchar2fs                Allocated to registers ;size:2
+                      00076 ;@__fs2ulong __schar2fs                Allocated to registers ;size:2
+                      00077 ;@__fs2ulong __uint2fs                 Allocated to registers ;size:2
+                      00078 ;@__fs2ulong __sint2fs                 Allocated to registers ;size:2
+                      00079 ;@__fs2ulong __ulong2fs                Allocated to registers ;size:2
+                      00080 ;@__fs2ulong __slong2fs                Allocated to registers ;size:2
+                      00081 ;@__fs2ulong __fs2uchar                Allocated to registers ;size:2
+                      00082 ;@__fs2ulong __fs2schar                Allocated to registers ;size:2
+                      00083 ;@__fs2ulong __fs2uint                 Allocated to registers ;size:2
+                      00084 ;@__fs2ulong __fs2sint                 Allocated to registers ;size:2
+                      00085 ;@__fs2ulong __fs2slong                Allocated to registers ;size:2
+                      00086 ;@__fs2ulong __fsadd                   Allocated to registers ;size:2
+                      00087 ;@__fs2ulong __fssub                   Allocated to registers ;size:2
+                      00088 ;@__fs2ulong __fsmul                   Allocated to registers ;size:2
+                      00089 ;@__fs2ulong __fsdiv                   Allocated to registers ;size:2
+                      00090 ;@__fs2ulong __fslt                    Allocated to registers ;size:2
+                      00091 ;@__fs2ulong __fseq                    Allocated to registers ;size:2
+                      00092 ;@__fs2ulong __fsneq                   Allocated to registers ;size:2
+                      00093 ;@__fs2ulong __fsgt                    Allocated to registers ;size:2
+                      00094 ;@__fs2ulong a1                        Allocated to registers r0x1007 r0x1006 r0x1005 r0x1004 ;size:4
+                      00095 ;@__fs2ulong fl1                       Allocated to registers ;size:4
+                      00096 ;@__fs2ulong exp                       Allocated to registers r0x1007 r0x1008 ;size:2
+                      00097 ;@__fs2ulong l                         Allocated to registers r0x1009 r0x100A r0x100B r0x100C ;size:4
+                      00098 ;@end Allocation info for local variables in function '__fs2ulong';
+                      00099 
+                      00100 ;--------------------------------------------------------
+                      00101 ; overlayable items in internal ram 
+                      00102 ;--------------------------------------------------------
+                      00103 ;       udata_ovr
+                      00104 ;--------------------------------------------------------
+                      00105 ; code
+                      00106 ;--------------------------------------------------------
+                      00107 code_fs2ulong   code
+                      00108 ;***
+                      00109 ;  pBlock Stats: dbName = C
+                      00110 ;***
+                      00111 ;entry:  ___fs2ulong    ;Function start
+                      00112 ; 2 exit points
+                      00113 ;has an exit
+                      00114 ;16 compiler assigned registers:
+                      00115 ;   r0x1004
+                      00116 ;   STK00
+                      00117 ;   r0x1005
+                      00118 ;   STK01
+                      00119 ;   r0x1006
+                      00120 ;   STK02
+                      00121 ;   r0x1007
+                      00122 ;   r0x1008
+                      00123 ;   r0x1009
+                      00124 ;   r0x100A
+                      00125 ;   r0x100B
+                      00126 ;   r0x100C
+                      00127 ;   r0x100D
+                      00128 ;   r0x100E
+                      00129 ;   r0x100F
+                      00130 ;   r0x1010
+                      00131 ;; Starting pCode block
+                      00132 ;;[ICODE] ../../libsdcc_mc30/fs2ulong.c:55:  _entry($5) :
+                      00133 ;;[ICODE] ../../libsdcc_mc30/fs2ulong.c:55:     proc ___fs2ulong [k1 lr0:0 so:0]{ ia0 a2p0 re0 rm0 nos0 ru0 dp0}{unsigned-long-int function ( float fixed) fixed}
+0000                  00134 ___fs2ulong     ;Function start
+                      00135 ; 2 exit points
+                      00136 ;;[ICODE] ../../libsdcc_mc30/fs2ulong.c:55: iTemp0 [k2 lr3:5 so:0]{ ia0 a2p0 re1 rm0 nos0 ru0 dp0}{float fixed}{ sir@ ___fs2ulong_a1_1_21}[r0x1000 r0x1001 r0x1002 r0x1003 ] = recv ___fs2ulong [k1 lr0:0 so:0]{ ia0 a2p0 re0 rm0 nos0 ru0 dp0}{unsigned-long-int function ( float fixed) fixed}
+                      00137 ;       .line   55; "../../libsdcc_mc30/fs2ulong.c"     unsigned long __fs2ulong (float a1) _FS_REENTRANT
+0000   1580           00138         MOVRA   r0x1004
+0001   1600           00139         MOVAR   STK00
+0002   1580           00140         MOVRA   r0x1005
+0003   1600           00141         MOVAR   STK01
+0004   1580           00142         MOVRA   r0x1006
+0005   1600           00143         MOVAR   STK02
+0006   1580           00144         MOVRA   (___fs2ulong_fl1_1_22 + 0)
+0007   1580           00145         MOVRA   r0x1007
+                      00146 ;;[ICODE] ../../libsdcc_mc30/fs2ulong.c:61:     iTemp1 [k5 lr4:5 so:0]{ ia0 a2p0 re0 rm1 nos0 ru0 dp0}{volatile-float near* fixed}[remat] = &[___fs2ulong_fl1_1_22 [k4 lr0:0 so:0]{ ia0 a2p0 re0 rm0 nos0 ru0 dp0}{volatile-struct float_long fixed}]
+                      00147 ;;[ICODE] ../../libsdcc_mc30/fs2ulong.c:61:     *(iTemp1 [k5 lr4:5 so:0]{ ia1 a2p0 re0 rm1 nos0 ru0 dp0}{volatile-float near* fixed}[remat]) := iTemp0 [k2 lr3:5 so:0]{ ia0 a2p0 re1 rm0 nos0 ru0 dp0}{float fixed}{ sir@ ___fs2ulong_a1_1_21}[r0x1000 r0x1001 r0x1002 r0x1003 ]
+                      00148 ;;gen.c:6374: size=3/4, offset=0, AOP_TYPE(res)=8
+                      00149 ;;110   MOVAR   r0x1007
+                      00150 ;;gen.c:6374: size=2/4, offset=1, AOP_TYPE(res)=8
+                      00151 ;       .line   61; "../../libsdcc_mc30/fs2ulong.c"     fl1.f = a1;
+0008   1600           00152         MOVAR   r0x1006
+0009   1580           00153         MOVRA   (___fs2ulong_fl1_1_22 + 1)
+                      00154 ;;gen.c:6374: size=1/4, offset=2, AOP_TYPE(res)=8
+000A   1600           00155         MOVAR   r0x1005
+000B   1580           00156         MOVRA   (___fs2ulong_fl1_1_22 + 2)
+                      00157 ;;gen.c:6374: size=0/4, offset=3, AOP_TYPE(res)=8
+000C   1600           00158         MOVAR   r0x1004
+000D   1580           00159         MOVRA   (___fs2ulong_fl1_1_22 + 3)
+                      00160 ;;[ICODE] ../../libsdcc_mc30/fs2ulong.c:63:     iTemp3 [k8 lr6:7 so:0]{ ia0 a2p0 re0 rm1 nos0 ru0 dp0}{volatile-long-int near* fixed}[remat] = &[___fs2ulong_fl1_1_22 [k4 lr0:0 so:0]{ ia0 a2p0 re0 rm0 nos0 ru0 dp0}{volatile-struct float_long fixed}]
+                      00161 ;;[ICODE] ../../libsdcc_mc30/fs2ulong.c:63:     iTemp5 [k11 lr7:8 so:0]{ ia0 a2p0 re0 rm0 nos0 ru0 dp0}{volatile-long-int fixed}[r0x1000 r0x1001 r0x1002 r0x1003 ] = @[iTemp3 [k8 lr6:7 so:0]{ ia1 a2p0 re0 rm1 nos0 ru0 dp0}{volatile-long-int near* fixed}[remat] + 0x0 {const-unsigned-char literal}]
+                      00162 ;       .line   63; "../../libsdcc_mc30/fs2ulong.c"     if (!fl1.l || SIGN(fl1.l))
+000E   1600           00163         MOVAR   (___fs2ulong_fl1_1_22 + 0)
+000F   1580           00164         MOVRA   r0x1007
+0010   1600           00165         MOVAR   (___fs2ulong_fl1_1_22 + 1)
+0011   1580           00166         MOVRA   r0x1006
+0012   1600           00167         MOVAR   (___fs2ulong_fl1_1_22 + 2)
+0013   1580           00168         MOVRA   r0x1005
+0014   1600           00169         MOVAR   (___fs2ulong_fl1_1_22 + 3)
+0015   1580           00170         MOVRA   r0x1004
+                      00171 ;;[ICODE] ../../libsdcc_mc30/fs2ulong.c:63:     if iTemp5 [k11 lr7:8 so:0]{ ia0 a2p0 re0 rm0 nos0 ru0 dp0}{volatile-long-int fixed}[r0x1000 r0x1001 r0x1002 r0x1003 ] == 0 goto _iftrue_0($1)
+0016   1600           00172         MOVAR   r0x1007
+0017   1700           00173         ORAR    r0x1006
+0018   1700           00174         ORAR    r0x1005
+0019   1700           00175         ORAR    r0x1004
+001A   3503           00176         JBCLR   STATUS,2
+001B   2800           00177         GOTO    _00105_DS_
+                      00178 ;;[ICODE] ../../libsdcc_mc30/fs2ulong.c:63:     iTemp6 [k12 lr9:10 so:0]{ ia0 a2p0 re0 rm1 nos0 ru0 dp0}{volatile-long-int near* fixed}[remat] = &[___fs2ulong_fl1_1_22 [k4 lr0:0 so:0]{ ia0 a2p0 re0 rm0 nos0 ru0 dp0}{volatile-struct float_long fixed}]
+                      00179 ;;[ICODE] ../../libsdcc_mc30/fs2ulong.c:63:     iTemp8 [k15 lr10:11 so:0]{ ia0 a2p0 re0 rm0 nos0 ru0 dp0}{volatile-long-int fixed}[r0x1000 r0x1001 r0x1002 r0x1003 ] = @[iTemp6 [k12 lr9:10 so:0]{ ia1 a2p0 re0 rm1 nos0 ru0 dp0}{volatile-long-int near* fixed}[remat] + 0x0 {const-unsigned-char literal}]
+001C   1600           00180         MOVAR   (___fs2ulong_fl1_1_22 + 0)
+001D   1580           00181         MOVRA   r0x1008
+001E   1580           00182         MOVRA   r0x1007
+001F   1600           00183         MOVAR   (___fs2ulong_fl1_1_22 + 1)
+0020   1580           00184         MOVRA   r0x1009
+0021   1580           00185         MOVRA   r0x1006
+0022   1600           00186         MOVAR   (___fs2ulong_fl1_1_22 + 2)
+0023   1580           00187         MOVRA   r0x100A
+0024   1580           00188         MOVRA   r0x1005
+0025   1600           00189         MOVAR   (___fs2ulong_fl1_1_22 + 3)
+0026   1580           00190         MOVRA   r0x100B
+0027   1580           00191         MOVRA   r0x1004
+                      00192 ;;[ICODE] ../../libsdcc_mc30/fs2ulong.c:63:     iTemp9 [k16 lr11:12 so:0]{ ia0 a2p0 re0 rm0 nos0 ru0 dp0}{unsigned-long-int fixed}[r0x1004 r0x1005 r0x1006 r0x1007 ] = (unsigned-long-int fixed)iTemp8 [k15 lr10:11 so:0]{ ia0 a2p0 re0 rm0 nos0 ru0 dp0}{volatile-long-int fixed}[r0x1000 r0x1001 r0x1002 r0x1003 ]
+                      00193 ;;109   MOVAR   r0x1007
+                      00194 ;;100   MOVAR   r0x1006
+                      00195 ;;101   MOVAR   r0x1005
+                      00196 ;;102   MOVAR   r0x1004
+                      00197 ;;[ICODE] ../../libsdcc_mc30/fs2ulong.c:63:     iTemp10 [k17 lr12:13 so:0]{ ia0 a2p0 re0 rm0 nos0 ru0 dp0}{char fixed}[r0x1000 ] = gabit iTemp9 [k16 lr11:12 so:0]{ ia0 a2p0 re0 rm0 nos0 ru0 dp0}{unsigned-long-int fixed}[r0x1004 r0x1005 r0x1006 r0x1007 ]
+0028   1600           00198         MOVAR   r0x100B
+0029   0D80           00199         ANDAI   0x80
+002A   3103           00200         JBSET   STATUS,2
+002B   0B01           00201         MOVAI   0x01
+002C   1580           00202         MOVRA   r0x1007
+                      00203 ;;[ICODE] ../../libsdcc_mc30/fs2ulong.c:63:     if iTemp10 [k17 lr12:13 so:0]{ ia0 a2p0 re0 rm0 nos0 ru0 dp0}{char fixed}[r0x1000 ] == 0 goto _iffalse_0($2)
+002D   0B00           00204         MOVAI   0x00
+002E   1700           00205         ORAR    r0x1007
+002F   3503           00206         JBCLR   STATUS,2
+0030   2800           00207         GOTO    _00106_DS_
+                      00208 ;;[ICODE] ../../libsdcc_mc30/fs2ulong.c:63:  _iftrue_0($1) :
+                      00209 ;;[ICODE] ../../libsdcc_mc30/fs2ulong.c:64:     ret 0x0 {unsigned-long-int literal}
+0031                  00210 _00105_DS_
+                      00211 ;       .line   64; "../../libsdcc_mc30/fs2ulong.c"     return (0);
+0031   0B00           00212         MOVAI   0x00
+0032   1580           00213         MOVRA   STK02
+0033   0B00           00214         MOVAI   0x00
+0034   1580           00215         MOVRA   STK01
+0035   0B00           00216         MOVAI   0x00
+0036   1580           00217         MOVRA   STK00
+0037   0B00           00218         MOVAI   0x00
+0038   2800           00219         GOTO    _00108_DS_
+                      00220 ;;[ICODE] ../../libsdcc_mc30/fs2ulong.c:64:  _iffalse_0($2) :
+                      00221 ;;[ICODE] ../../libsdcc_mc30/fs2ulong.c:66:     iTemp12 [k20 lr17:18 so:0]{ ia0 a2p0 re0 rm1 nos0 ru0 dp0}{volatile-long-int near* fixed}[remat] = &[___fs2ulong_fl1_1_22 [k4 lr0:0 so:0]{ ia0 a2p0 re0 rm0 nos0 ru0 dp0}{volatile-struct float_long fixed}]
+                      00222 ;;[ICODE] ../../libsdcc_mc30/fs2ulong.c:66:     iTemp14 [k23 lr18:19 so:0]{ ia0 a2p0 re0 rm0 nos0 ru0 dp0}{volatile-long-int fixed}[r0x1000 r0x1004 r0x1005 r0x1006 ] = @[iTemp12 [k20 lr17:18 so:0]{ ia1 a2p0 re0 rm1 nos0 ru0 dp0}{volatile-long-int near* fixed}[remat] + 0x0 {const-unsigned-char literal}]
+0039                  00223 _00106_DS_
+                      00224 ;       .line   66; "../../libsdcc_mc30/fs2ulong.c"     exp = EXP (fl1.l) - EXCESS - 24;
+0039   1600           00225         MOVAR   (___fs2ulong_fl1_1_22 + 0)
+003A   1580           00226         MOVRA   r0x100B
+003B   1580           00227         MOVRA   r0x1007
+003C   1600           00228         MOVAR   (___fs2ulong_fl1_1_22 + 1)
+003D   1580           00229         MOVRA   r0x100C
+003E   1580           00230         MOVRA   r0x1008
+003F   1600           00231         MOVAR   (___fs2ulong_fl1_1_22 + 2)
+0040   1580           00232         MOVRA   r0x1009
+0041   1600           00233         MOVAR   (___fs2ulong_fl1_1_22 + 3)
+0042   1580           00234         MOVRA   r0x100E
+0043   1580           00235         MOVRA   r0x100A
+                      00236 ;;[ICODE] ../../libsdcc_mc30/fs2ulong.c:66:     iTemp15 [k24 lr19:20 so:0]{ ia0 a2p0 re0 rm0 nos0 ru0 dp0}{unsigned-long-int fixed}[r0x1007 r0x1008 r0x1009 r0x100A ] = (unsigned-long-int fixed)iTemp14 [k23 lr18:19 so:0]{ ia0 a2p0 re0 rm0 nos0 ru0 dp0}{volatile-long-int fixed}[r0x1000 r0x1004 r0x1005 r0x1006 ]
+                      00237 ;;107   MOVAR   r0x1007
+                      00238 ;;103   MOVAR   r0x1008
+0044   1600           00239         MOVAR   r0x1009
+0045   1580           00240         MOVRA   r0x100D
+                      00241 ;;108   MOVAR   r0x100A
+                      00242 ;;[ICODE] ../../libsdcc_mc30/fs2ulong.c:66:     iTemp16 [k25 lr20:21 so:0]{ ia0 a2p0 re0 rm0 nos0 ru0 dp0}{unsigned-long-int fixed}[r0x1000 r0x1004 r0x1005 r0x1006 ] = iTemp15 [k24 lr19:20 so:0]{ ia0 a2p0 re0 rm0 nos0 ru0 dp0}{unsigned-long-int fixed}[r0x1007 r0x1008 r0x1009 r0x100A ] >> 0x17 {const-unsigned-char literal}
+0046   1400           00243         RLAR    r0x100D
+0047   1400           00244         RLAR    r0x100E
+0048   1580           00245         MOVRA   r0x100B
+0049   1580           00246         MOVRA   r0x1007
+004A   1D80           00247         CLRR    r0x1008
+004B   1480           00248         RLR     r0x1008
+004C   1D80           00249         CLRR    r0x1009
+004D   1D80           00250         CLRR    r0x100A
+                      00251 ;;[ICODE] ../../libsdcc_mc30/fs2ulong.c:66:     iTemp17 [k26 lr21:22 so:0]{ ia0 a2p0 re0 rm0 nos0 ru0 dp0}{unsigned-long-int fixed}[r0x1007 r0x1008 r0x1009 r0x100A ] = iTemp16 [k25 lr20:21 so:0]{ ia0 a2p0 re0 rm0 nos0 ru0 dp0}{unsigned-long-int fixed}[r0x1000 r0x1004 r0x1005 r0x1006 ] & 0xff {unsigned-long-int literal}
+                      00252 ;;99    MOVAR   r0x1007
+004E   1D80           00253         CLRR    r0x100C
+004F   1D80           00254         CLRR    r0x100D
+0050   1D80           00255         CLRR    r0x100E
+                      00256 ;;[ICODE] ../../libsdcc_mc30/fs2ulong.c:66:     iTemp18 [k27 lr22:23 so:0]{ ia0 a2p0 re0 rm0 nos0 ru0 dp0}{unsigned-long-int fixed}[r0x1007 r0x1008 r0x1009 r0x100A ] = iTemp17 [k26 lr21:22 so:0]{ ia0 a2p0 re0 rm0 nos0 ru0 dp0}{unsigned-long-int fixed}[r0x1007 r0x1008 r0x1009 r0x100A ] - 0x96 {unsigned-long-int literal}
+0051   0B6A           00257         MOVAI   0x6a
+0052   1F80           00258         ADDRA   r0x100B
+0053   0BFF           00259         MOVAI   0xff
+0054   3003           00260         JBSET   STATUS,0
+0055   1F80           00261         ADDRA   r0x100C
+0056   0BFF           00262         MOVAI   0xff
+0057   3003           00263         JBSET   STATUS,0
+0058   1F80           00264         ADDRA   r0x100D
+0059   0BFF           00265         MOVAI   0xff
+005A   3003           00266         JBSET   STATUS,0
+005B   1F80           00267         ADDRA   r0x100E
+                      00268 ;;[ICODE] ../../libsdcc_mc30/fs2ulong.c:66:     iTemp11 [k18 lr23:31 so:0]{ ia0 a2p0 re1 rm0 nos0 ru0 dp0}{int fixed}{ sir@ ___fs2ulong_exp_1_22}[r0x1000 r0x1004 ] = (int fixed)iTemp18 [k27 lr22:23 so:0]{ ia0 a2p0 re0 rm0 nos0 ru0 dp0}{unsigned-long-int fixed}[r0x1007 r0x1008 r0x1009 r0x100A ]
+005C   1600           00269         MOVAR   r0x100B
+005D   1580           00270         MOVRA   r0x1007
+005E   1600           00271         MOVAR   r0x100C
+005F   1580           00272         MOVRA   r0x1008
+                      00273 ;;[ICODE] ../../libsdcc_mc30/fs2ulong.c:67:     iTemp21 [k31 lr25:26 so:0]{ ia0 a2p0 re0 rm1 nos0 ru0 dp0}{volatile-long-int near* fixed}[remat] = &[___fs2ulong_fl1_1_22 [k4 lr0:0 so:0]{ ia0 a2p0 re0 rm0 nos0 ru0 dp0}{volatile-struct float_long fixed}]
+                      00274 ;;[ICODE] ../../libsdcc_mc30/fs2ulong.c:67:     iTemp23 [k34 lr26:27 so:0]{ ia0 a2p0 re0 rm0 nos0 ru0 dp0}{volatile-long-int fixed}[r0x1005 r0x1006 r0x1007 r0x1008 ] = @[iTemp21 [k31 lr25:26 so:0]{ ia1 a2p0 re0 rm1 nos0 ru0 dp0}{volatile-long-int near* fixed}[remat] + 0x0 {const-unsigned-char literal}]
+                      00275 ;       .line   67; "../../libsdcc_mc30/fs2ulong.c"     l = MANT (fl1.l);
+0060   1600           00276         MOVAR   (___fs2ulong_fl1_1_22 + 0)
+0061   1580           00277         MOVRA   r0x1009
+0062   1600           00278         MOVAR   (___fs2ulong_fl1_1_22 + 1)
+0063   1580           00279         MOVRA   r0x100E
+0064   1580           00280         MOVRA   r0x100A
+0065   1600           00281         MOVAR   (___fs2ulong_fl1_1_22 + 2)
+0066   1580           00282         MOVRA   r0x100F
+0067   1580           00283         MOVRA   r0x100B
+0068   1600           00284         MOVAR   (___fs2ulong_fl1_1_22 + 3)
+0069   1580           00285         MOVRA   r0x100C
+                      00286 ;;[ICODE] ../../libsdcc_mc30/fs2ulong.c:67:     iTemp24 [k35 lr27:28 so:0]{ ia0 a2p0 re0 rm0 nos0 ru0 dp0}{unsigned-long-int register}[r0x1009 r0x100A r0x100B r0x100C ] = (unsigned-long-int register)iTemp23 [k34 lr26:27 so:0]{ ia0 a2p0 re0 rm0 nos0 ru0 dp0}{volatile-long-int fixed}[r0x1005 r0x1006 r0x1007 r0x1008 ]
+006A   1600           00287         MOVAR   r0x1009
+006B   1580           00288         MOVRA   r0x1009
+006C   1580           00289         MOVRA   r0x100D
+                      00290 ;;104   MOVAR   r0x100A
+                      00291 ;;105   MOVAR   r0x100B
+006D   1600           00292         MOVAR   r0x100C
+                      00293 ;;1     MOVRA   r0x1010
+                      00294 ;;[ICODE] ../../libsdcc_mc30/fs2ulong.c:67:     iTemp25 [k36 lr28:29 so:0]{ ia0 a2p0 re0 rm0 nos0 ru0 dp0}{unsigned-long-int register}[r0x1005 r0x1006 r0x1007 r0x1008 ] = iTemp24 [k35 lr27:28 so:0]{ ia0 a2p0 re0 rm0 nos0 ru0 dp0}{unsigned-long-int register}[r0x1009 r0x100A r0x100B r0x100C ] & 0x7fffff {unsigned-long-int literal}
+                      00295 ;;106   MOVAR   r0x100D
+006E   1600           00296         MOVAR   r0x100E
+006F   1580           00297         MOVRA   r0x100A
+0070   0B7F           00298         MOVAI   0x7f
+0071   1E00           00299         ANDAR   r0x100F
+0072   1580           00300         MOVRA   r0x100B
+0073   1D80           00301         CLRR    r0x100C
+                      00302 ;;[ICODE] ../../libsdcc_mc30/fs2ulong.c:67:     iTemp20 [k29 lr29:34 so:0]{ ia0 a2p0 re1 rm0 nos0 ru0 dp0}{unsigned-long-int fixed}{ sir@ ___fs2ulong_l_1_22}[r0x1005 r0x1006 r0x1007 r0x1008 ] = iTemp25 [k36 lr28:29 so:0]{ ia0 a2p0 re0 rm0 nos0 ru0 dp0}{unsigned-long-int register}[r0x1005 r0x1006 r0x1007 r0x1008 ] | 0x800000 {unsigned-long-int literal}
+0074   3B80           00303         BSET    r0x100B,7
+                      00304 ;;[ICODE] ../../libsdcc_mc30/fs2ulong.c:69:     iTemp27 [k38 lr31:32 so:0]{ ia0 a2p0 re0 rm0 nos0 ru0 dp0}{int fixed}[r0x1000 r0x1004 ] = - iTemp11 [k18 lr23:31 so:0]{ ia0 a2p0 re1 rm0 nos0 ru0 dp0}{int fixed}{ sir@ ___fs2ulong_exp_1_22}[r0x1000 r0x1004 ]
+                      00305 ;       .line   69; "../../libsdcc_mc30/fs2ulong.c"     l >>= -exp;
+0075   1C80           00306         COMR    r0x1007
+0076   1C80           00307         COMR    r0x1008
+0077   1980           00308         INCR    r0x1007
+0078   3503           00309         JBCLR   STATUS,2
+0079   1980           00310         INCR    r0x1008
+                      00311 ;;[ICODE] ../../libsdcc_mc30/fs2ulong.c:69:     iTemp20 [k29 lr29:34 so:0]{ ia0 a2p0 re1 rm0 nos0 ru0 dp0}{unsigned-long-int fixed}{ sir@ ___fs2ulong_l_1_22}[r0x1005 r0x1006 r0x1007 r0x1008 ] = iTemp20 [k29 lr29:34 so:0]{ ia0 a2p0 re1 rm0 nos0 ru0 dp0}{unsigned-long-int fixed}{ sir@ ___fs2ulong_l_1_22}[r0x1005 r0x1006 r0x1007 r0x1008 ] >> iTemp27 [k38 lr31:32 so:0]{ ia0 a2p0 re0 rm0 nos0 ru0 dp0}{int fixed}[r0x1000 r0x1004 ]
+007A   1600           00312         MOVAR   r0x1007
+007B   3780           00313         JBCLR   r0x1007,7
+007C   2800           00314         GOTO    _00114_DS_
+007D   0900           00315         ISUBAI  0x00
+007E   3503           00316         JBCLR   STATUS,2
+007F   2800           00317         GOTO    _00113_DS_
+0080                  00318 _00112_DS_
+0080   1380           00319         RRR     r0x100C
+0081   1380           00320         RRR     r0x100B
+0082   1380           00321         RRR     r0x100A
+0083   1380           00322         RRR     r0x1009
+0084   0E01           00323         ADDAI   0x01
+0085   3003           00324         JBSET   STATUS,0
+0086   2800           00325         GOTO    _00112_DS_
+0087   2800           00326         GOTO    _00113_DS_
+0088                  00327 _00114_DS_
+0088   3C03           00328         BCLR    STATUS,0
+0089                  00329 _00115_DS_
+0089   1480           00330         RLR     r0x1009
+008A   1480           00331         RLR     r0x100A
+008B   1480           00332         RLR     r0x100B
+008C   1480           00333         RLR     r0x100C
+008D   0E01           00334         ADDAI   0x01
+008E   3003           00335         JBSET   STATUS,0
+008F   2800           00336         GOTO    _00115_DS_
+                      00337 ;;[ICODE] ../../libsdcc_mc30/fs2ulong.c:71:     ret iTemp20 [k29 lr29:34 so:0]{ ia0 a2p0 re1 rm0 nos0 ru0 dp0}{unsigned-long-int fixed}{ sir@ ___fs2ulong_l_1_22}[r0x1005 r0x1006 r0x1007 r0x1008 ]
+0090                  00338 _00113_DS_
+                      00339 ;       .line   71; "../../libsdcc_mc30/fs2ulong.c"     return l;
+0090   1600           00340         MOVAR   r0x1009
+0091   1580           00341         MOVRA   STK02
+0092   1600           00342         MOVAR   r0x100A
+0093   1580           00343         MOVRA   STK01
+0094   1600           00344         MOVAR   r0x100B
+0095   1580           00345         MOVRA   STK00
+0096   1600           00346         MOVAR   r0x100C
+                      00347 ;;[ICODE] ../../libsdcc_mc30/fs2ulong.c:71:  _return($4) :
+                      00348 ;;[ICODE] ../../libsdcc_mc30/fs2ulong.c:71:     eproc ___fs2ulong [k1 lr0:0 so:0]{ ia0 a2p0 re0 rm0 nos0 ru0 dp0}{unsigned-long-int function ( float fixed) fixed}
+0097                  00349 _00108_DS_
+0097   000C           00350         RETURN  
+                      00351 ; exit point of ___fs2ulong
+                      00352 
+                      00353 
+                      00354 ;       code size estimation:
+                      00355 ;         152+    0 =   152 instructions (  304 byte)
+                      00356 
+                      00357         end
+gpasm-2.0.0_beta2 (Nov  6 2017)fs2ulong.asm       2018-1-12  13:52:53          PAGE  2
+
+
+SYMBOL TABLE
+  LABEL                             VALUE
+
+BUZE                              00000005
+C                                 00000000
+DBLCK                             00000004
+DC                                00000001
+DDR0                              00000045
+DDR00                             00000000
+DDR01                             00000001
+DDR02                             00000002
+DDR03                             00000003
+DDR1                              00000046
+DDR10                             00000000
+DDR11                             00000001
+DDR12                             00000002
+DDR13                             00000003
+DDR14                             00000004
+DDR15                             00000005
+DDR16                             00000006
+DDR17                             00000007
+EIS                               00000006
+FSR                               00000004
+FSR0                              00000000
+FSR1                              00000001
+FSR2                              00000002
+FSR3                              00000003
+FSR4                              00000004
+FSR5                              00000005
+GIE                               00000007
+INDF                              00000000
+INDF0                             00000000
+INDF1                             00000001
+INDF2                             00000002
+INDF3                             00000003
+INDF4                             00000004
+INDF5                             00000005
+INDF6                             00000006
+INDF7                             00000007
+INTECON                           0000000E
+INTFLAG                           0000000F
+INTIE                             00000002
+INTIF                             00000002
+INTOM                             00000006
+KBIE                              00000001
+KBIF                              00000001
+KBIM                              00000009
+KBIM0                             00000000
+KBIM1                             00000001
+KBIM2                             00000002
+KBIM3                             00000003
+KBIM4                             00000004
+KBIM5                             00000005
+KBIM6                             00000006
+KBIM7                             00000007
+LVDEN                             00000000
+LVDF                              00000005
+LVDSEL0                           00000001
+LVDSEL1                           00000002
+LVDSEL2                           00000003
+LVDSEL3                           00000004
+MCR                               00000008
+ODCON                             0000000C
+P0                                00000005
+P00D                              00000000
+P00PD                             00000000
+P01D                              00000001
+P01PD                             00000001
+P02D                              00000002
+P02PD                             00000002
+P03D                              00000003
+P03PD                             00000003
+P1                                00000006
+P10D                              00000000
+P10OD                             00000000
+P10PD                             00000004
+P10PU                             00000000
+P11D                              00000001
+P11OD                             00000001
+P11PD                             00000005
+P11PU                             00000001
+P12D                              00000002
+P12OD                             00000002
+P12PD                             00000006
+P12PU                             00000002
+P13D                              00000003
+P13PU                             00000003
+P14D                              00000004
+P14OD                             00000004
+P14PU                             00000004
+P15D                              00000005
+P15OD                             00000005
+P15PU                             00000005
+P16D                              00000006
+P16OD                             00000006
+P16PU                             00000006
+P17D                              00000007
+P17OD                             00000007
+P17PU                             00000007
+PC0                               00000000
+PC1                               00000001
+PC2                               00000002
+PC3                               00000003
+PC4                               00000004
+PC5                               00000005
+PC6                               00000006
+PC7                               00000007
+PCH0                              00000000
+PCH1                              00000001
+PCL                               00000002
+PCLATH                            0000000A
+PD                                00000003
+PDCON                             0000000B
+PMW0OE                            00000007
+PMW1E                             00000001
+PUCON                             0000000D
+PWM0E                             00000006
+PWM1OE                            00000006
+PWM2E                             00000000
+PWM2OE                            00000005
+PWMCR                             00000048
+PWMINV                            00000002
+PWMMD                             00000003
+RST                               00000007
+STATUS                            00000003
+STK00                             00000000
+STK01                             00000000
+STK02                             00000000
+STK03                             00000000
+STK04                             00000000
+STK05                             00000000
+STK06                             00000000
+T0C0                              00000000
+T0C1                              00000001
+T0C2                              00000002
+T0C3                              00000003
+T0C4                              00000004
+T0C5                              00000005
+T0C6                              00000006
+T0C7                              00000007
+T0CNT                             00000001
+T0CR                              00000041
+T0IE                              00000000
+T0IF                              00000000
+T0PR0                             00000000
+T0PR1                             00000001
+T0PR2                             00000002
+T0PTA                             00000003
+T0PTS                             00000005
+T0SE                              00000004
+T1C0                              00000000
+T1C1                              00000001
+T1C2                              00000002
+T1C3                              00000003
+T1C4                              00000004
+T1C5                              00000005
+T1C6                              00000006
+T1C7                              00000007
+T1CNT                             0000004D
+T1CR                              0000004C
+T1DAT0                            0000004F
+T1DAT00                           00000000
+T1DAT01                           00000001
+T1DAT02                           00000002
+T1DAT03                           00000003
+T1DAT04                           00000004
+T1DAT05                           00000005
+T1DAT06                           00000006
+T1DAT07                           00000007
+T1DAT1                            00000049
+T1DAT10                           00000000
+T1DAT11                           00000001
+T1DAT12                           00000002
+T1DAT13                           00000003
+T1DAT14                           00000004
+T1DAT15                           00000005
+T1DAT16                           00000006
+T1DAT17                           00000007
+T1DAT2                            0000004A
+T1DAT20                           00000000
+T1DAT21                           00000001
+T1DAT22                           00000002
+T1DAT23                           00000003
+T1DAT24                           00000004
+T1DAT25                           00000005
+T1DAT26                           00000006
+T1DAT27                           00000007
+T1IE                              00000001
+T1IF                              00000000
+T1LOAD                            0000004E
+T1LOAD0                           00000000
+T1LOAD1                           00000001
+T1LOAD2                           00000002
+T1LOAD3                           00000003
+T1LOAD4                           00000004
+T1LOAD5                           00000005
+T1LOAD6                           00000006
+T1LOAD7                           00000007
+T1PR0                             00000000
+T1PR1                             00000001
+T1PR2                             00000002
+T1PTS0                            00000003
+T1PTS1                            00000004
+TBS                               00000007
+TC1EN                             00000007
+TM0CR                             0000004B
+TO                                00000004
+WDTEN                             00000007
+Z                                 00000002
+_00105_DS_                        00000031
+_00106_DS_                        00000039
+_00108_DS_                        00000097
+_00112_DS_                        00000080
+_00113_DS_                        00000090
+_00114_DS_                        00000088
+_00115_DS_                        00000089
+_CONFIG0                          00002000
+_CONFIG1                          00002001
+__30P011                          00000001
+___fs2schar                       00000000
+___fs2sint                        00000000
+___fs2slong                       00000000
+___fs2uchar                       00000000
+___fs2uint                        00000000
+___fs2ulong                       00000000
+___fs2ulong_fl1_1_22              0000000C
+___fsadd                          00000000
+___fsdiv                          00000000
+___fseq                           00000000
+___fsgt                           00000000
+___fslt                           00000000
+___fsmul                          00000000
+___fsneq                          00000000
+___fssub                          00000000
+___schar2fs                       00000000
+___sint2fs                        00000000
+___slong2fs                       00000000
+___uchar2fs                       00000000
+___uint2fs                        00000000
+___ulong2fs                       00000000
+r0x1004                           00000003
+r0x1005                           00000002
+r0x1006                           00000001
+r0x1007                           00000000
+r0x1008                           00000004
+r0x1009                           00000005
+r0x100A                           00000006
+r0x100B                           00000007
+r0x100C                           00000008
+r0x100D                           00000009
+r0x100E                           0000000A
+r0x100F                           0000000B
+
+Errors   :     0
+Warnings :     0 reported,     0 suppressed
+Messages :     0 reported,     0 suppressed
+
+

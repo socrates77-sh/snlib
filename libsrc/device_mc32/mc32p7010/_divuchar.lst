@@ -1,4 +1,4 @@
-gpasm-2.0.0_beta2 (Nov  6 2017)_divuchar.asm      2018-1-11  14:01:19          PAGE  1
+gpasm-2.0.0_beta2 (Nov  6 2017)_divuchar.asm      2018-1-12  10:28:17          PAGE  1
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -7,7 +7,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                       00001 ;--------------------------------------------------------
                       00002 ; File Created by SN-SDCC : SinoMCU ANSI-C Compiler
                       00003 ; Version 1.1.0 (Dec 19 2017) (MINGW32)
-                      00004 ; This file was generated Thu Jan 11 14:01:19 2018
+                      00004 ; This file was generated Fri Jan 12 10:28:17 2018
                       00005 ;--------------------------------------------------------
                       00006 ; MC32 port for the RISC core
                       00007 ;--------------------------------------------------------
@@ -148,7 +148,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
 001A   4800           00139         RSUBAR  r0x1000
 001B   E187           00140         JBSET   PFLAG,0
 001C   A000           00141         GOTO    _00111_DS_
-                      00142 ;;genSkipc:3195: created from rifx:00DD608C
+                      00142 ;;genSkipc:3195: created from rifx:00DE608C
                       00143 ;;[ICODE] ../../libsdcc_mc32/_divuchar.c:48:    if iTemp8 [k14 lr22:23 so:0]{ ia0 a2p0 re0 rm0 nos0 ru0 dp0}{char fixed} != 0 goto _iffalse_1($7)
                       00144 ;;[ICODE] ../../libsdcc_mc32/_divuchar.c:49:    iTemp2 [k6 lr5:35 so:0]{ ia0 a2p0 re1 rm0 nos0 ru0 dp0}{unsigned-char fixed}{ sir@ __divuchar_result_1_2}[r0x1002 ] = iTemp2 [k6 lr5:35 so:0]{ ia0 a2p0 re1 rm0 nos0 ru0 dp0}{unsigned-char fixed}{ sir@ __divuchar_result_1_2}[r0x1002 ] + iTemp3 [k8 lr6:33 so:0]{ ia0 a2p0 re1 rm0 nos0 ru0 dp0}{unsigned-char fixed}{ sir@ __divuchar_mask_1_2}[r0x1003 ]
                       00145 ;       .line   49; "../../libsdcc_mc32/_divuchar.c"    result += mask;
@@ -188,7 +188,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                       00179 ;          40+    0 =    40 instructions (   80 byte)
                       00180 
                       00181         end
-gpasm-2.0.0_beta2 (Nov  6 2017)_divuchar.asm      2018-1-11  14:01:19          PAGE  2
+gpasm-2.0.0_beta2 (Nov  6 2017)_divuchar.asm      2018-1-12  10:28:17          PAGE  2
 
 
 SYMBOL TABLE

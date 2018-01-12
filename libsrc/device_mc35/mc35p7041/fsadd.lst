@@ -1,4 +1,4 @@
-gpasm-2.0.0_beta2 (Nov  6 2017)fsadd.asm          2017-12-20  12:01:14         PAGE  1
+gpasm-2.0.0_beta2 (Nov  6 2017)fsadd.asm          2018-1-12  10:25:22          PAGE  1
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -7,7 +7,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                       00001 ;--------------------------------------------------------
                       00002 ; File Created by SN-SDCC : SinoMCU ANSI-C Compiler
                       00003 ; Version 1.1.0 (Dec 19 2017) (MINGW32)
-                      00004 ; This file was generated Wed Dec 20 12:01:14 2017
+                      00004 ; This file was generated Fri Jan 12 10:25:21 2018
                       00005 ;--------------------------------------------------------
                       00006 ; MC35 port for the RISC core
                       00007 ;--------------------------------------------------------
@@ -396,7 +396,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
 00A0                  00387 _00165_DS_
 00A0   5286           00388         JBCLR   PFLAG,2
 00A1   8000           00389         GOTO    _00110_DS_
-                      00390 ;;genSkipc:3223: created from rifx:00DD608C
+                      00390 ;;genSkipc:3223: created from rifx:00DE608C
                       00391 ;;[ICODE] ../../libsdcc_mc35/fsadd.c:72:        if iTemp34 [k51 lr37:38 so:0]{ ia0 a2p0 re0 rm0 nos0 ru0 dp0}{char fixed} == 0 goto _iffalse_2($6)
                       00392 ;;[ICODE] ../../libsdcc_mc35/fsadd.c:73:        iTemp35 [k52 lr39:40 so:0]{ ia0 a2p0 re0 rm1 nos0 ru0 dp0}{volatile-float near* fixed}[remat] = &[___fsadd_fl1_1_22 [k8 lr0:0 so:0]{ ia0 a2p0 re0 rm0 nos0 ru0 dp0}{volatile-struct float_long fixed}]
                       00393 ;;[ICODE] ../../libsdcc_mc35/fsadd.c:73:        iTemp37 [k55 lr40:41 so:0]{ ia0 a2p0 re0 rm0 nos0 ru1 dp0}{volatile-float fixed}[r0x1000 r0x1001 r0x100C r0x100D ] = @[iTemp35 [k52 lr39:40 so:0]{ ia1 a2p0 re0 rm1 nos0 ru0 dp0}{volatile-float near* fixed}[remat] + 0x0 {const-unsigned-char literal}]
@@ -447,7 +447,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
 00C7                  00438 _00166_DS_
 00C7   5286           00439         JBCLR   PFLAG,2
 00C8   8000           00440         GOTO    _00112_DS_
-                      00441 ;;genSkipc:3223: created from rifx:00DD608C
+                      00441 ;;genSkipc:3223: created from rifx:00DE608C
                       00442 ;;[ICODE] ../../libsdcc_mc35/fsadd.c:74:        if iTemp39 [k57 lr44:45 so:0]{ ia0 a2p0 re0 rm0 nos0 ru0 dp0}{char fixed} == 0 goto _iffalse_3($8)
                       00443 ;;[ICODE] ../../libsdcc_mc35/fsadd.c:75:        iTemp40 [k58 lr46:47 so:0]{ ia0 a2p0 re0 rm1 nos0 ru0 dp0}{volatile-float near* fixed}[remat] = &[___fsadd_fl2_1_22 [k12 lr0:0 so:0]{ ia0 a2p0 re0 rm0 nos0 ru0 dp0}{volatile-struct float_long fixed}]
                       00444 ;;[ICODE] ../../libsdcc_mc35/fsadd.c:75:        iTemp42 [k61 lr47:48 so:0]{ ia0 a2p0 re0 rm0 nos0 ru1 dp0}{volatile-float fixed}[r0x1000 r0x1001 r0x100C r0x100D ] = @[iTemp40 [k58 lr46:47 so:0]{ ia1 a2p0 re0 rm1 nos0 ru0 dp0}{volatile-float near* fixed}[remat] + 0x0 {const-unsigned-char literal}]
@@ -606,7 +606,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
 013F                  00597 _00167_DS_
 013F   5286           00598         JBCLR   PFLAG,2
 0140   8000           00599         GOTO    _00118_DS_
-                      00600 ;;genSkipc:3223: created from rifx:00DD608C
+                      00600 ;;genSkipc:3223: created from rifx:00DE608C
                       00601 ;;[ICODE] ../../libsdcc_mc35/fsadd.c:85:        if iTemp65 [k90 lr74:75 so:0]{ ia0 a2p0 re0 rm0 nos0 ru0 dp0}{char fixed} == 0 goto _iffalse_6($14)
                       00602 ;;[ICODE] ../../libsdcc_mc35/fsadd.c:87:        iTemp66 [k91 lr76:77 so:0]{ ia0 a2p0 re0 rm0 nos0 ru0 dp0}{int fixed}[r0x1012 r0x1013 ] = iTemp19 [k32 lr28:98 so:0]{ ia0 a2p0 re1 rm0 nos0 ru0 dp0}{int fixed}{ sir@ ___fsadd_exp1_1_22}[r0x1004 r0x1005 ] - iTemp26 [k41 lr34:84 so:0]{ ia0 a2p0 re1 rm0 nos0 ru0 dp0}{int fixed}{ sir@ ___fsadd_exp2_1_22}[r0x1006 r0x1007 ]
                       00603 ;       .line   87; "../../libsdcc_mc35/fsadd.c"        mant2 >>= exp1 - exp2;
@@ -736,7 +736,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
 01A4   4286           00727         BCLR    PFLAG,2
 01A5   5A86           00728         JBSET   PFLAG,2
 01A6   8000           00729         GOTO    _00123_DS_
-                      00730 ;;genSkipc:3223: created from rifx:00DD608C
+                      00730 ;;genSkipc:3223: created from rifx:00DE608C
                       00731 ;;[ICODE] ../../libsdcc_mc35/fsadd.c:96:        if iTemp71 [k96 lr88:89 so:0]{ ia0 a2p0 re0 rm0 nos0 ru0 dp0}{char fixed} == 0 goto _iffalse_8($19)
                       00732 ;;[ICODE] ../../libsdcc_mc35/fsadd.c:98:        iTemp43 [k62 lr53:131 so:0]{ ia0 a2p0 re1 rm0 nos0 ru0 dp0}{long-int fixed}{ sir@ ___fsadd_mant1_1_22}[r0x1000 r0x1001 r0x100C r0x100D ] = - iTemp43 [k62 lr53:131 so:0]{ ia0 a2p0 re1 rm0 nos0 ru0 dp0}{long-int fixed}{ sir@ ___fsadd_mant1_1_22}[r0x1000 r0x1001 r0x100C r0x100D ]
                       00733 ;       .line   98; "../../libsdcc_mc35/fsadd.c"        mant1 = -mant1;
@@ -995,7 +995,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                       00986 ;         589+    0 =   589 instructions ( 1178 byte)
                       00987 
                       00988         end
-gpasm-2.0.0_beta2 (Nov  6 2017)fsadd.asm          2017-12-20  12:01:14         PAGE  2
+gpasm-2.0.0_beta2 (Nov  6 2017)fsadd.asm          2018-1-12  10:25:22          PAGE  2
 
 
 SYMBOL TABLE

@@ -1,7 +1,7 @@
 ;--------------------------------------------------------
 ; File Created by SN-SDCC : SinoMCU ANSI-C Compiler
 ; Version 1.1.0 (Dec 19 2017) (MINGW32)
-; This file was generated Thu Jan 11 14:01:27 2018
+; This file was generated Fri Jan 12 10:28:25 2018
 ;--------------------------------------------------------
 ; MC32 port for the RISC core
 ;--------------------------------------------------------
@@ -109,7 +109,7 @@ __modschar	;Function start
 	BCLR	PFLAG,0
 	JBSET	PFLAG,0
 	GOTO	_00112_DS_
-;;genSkipc:3195: created from rifx:00DD608C
+;;genSkipc:3195: created from rifx:00DE608C
 ;;[ICODE] ../../libsdcc_mc32/_modschar.c:34: 	if iTemp2 [k6 lr5:6 so:0]{ ia0 a2p0 re0 rm0 nos0 ru0 dp0}{char fixed} == 0 goto _iffalse_2($8)
 ;;[ICODE] ../../libsdcc_mc32/_modschar.c:36: 	iTemp3 [k7 lr7:8 so:0]{ ia0 a2p0 re0 rm0 nos0 ru0 dp0}{char fixed} = iTemp1 [k4 lr4:50 so:0]{ ia0 a2p0 re1 rm0 nos0 ru0 dp0}{char fixed}{ sir@ __modschar_b_1_2}[r0x1001 ] < 0x0 {const-char literal}
 ;;signed compare: left < lit(0x0=0), size=1, mask=ff
@@ -119,7 +119,7 @@ __modschar	;Function start
 	BCLR	PFLAG,0
 	JBSET	PFLAG,0
 	GOTO	_00106_DS_
-;;genSkipc:3195: created from rifx:00DD608C
+;;genSkipc:3195: created from rifx:00DE608C
 ;;[ICODE] ../../libsdcc_mc32/_modschar.c:36: 	if iTemp3 [k7 lr7:8 so:0]{ ia0 a2p0 re0 rm0 nos0 ru0 dp0}{char fixed} == 0 goto _iffalse_0($2)
 ;;[ICODE] ../../libsdcc_mc32/_modschar.c:37: 	iTemp4 [k9 lr9:10 so:0]{ ia0 a2p0 re0 rm0 nos0 ru0 dp0}{int fixed}[r0x1002 r0x1003 ] = (int fixed)iTemp0 [k2 lr3:48 so:0]{ ia0 a2p0 re1 rm0 nos0 ru0 dp0}{char fixed}{ sir@ __modschar_a_1_2}[r0x1000 ]
 ;	.line	37; "../../libsdcc_mc32/_modschar.c"	return _moduchar ((unsigned int)-a, (unsigned int)-b);
@@ -232,7 +232,7 @@ _00112_DS_
 	BCLR	PFLAG,0
 	JBSET	PFLAG,0
 	GOTO	_00109_DS_
-;;genSkipc:3195: created from rifx:00DD608C
+;;genSkipc:3195: created from rifx:00DE608C
 ;;[ICODE] ../../libsdcc_mc32/_modschar.c:42: 	if iTemp21 [k28 lr34:35 so:0]{ ia0 a2p0 re0 rm0 nos0 ru0 dp0}{char fixed} == 0 goto _iffalse_1($5)
 ;;[ICODE] ../../libsdcc_mc32/_modschar.c:43: 	iTemp22 [k29 lr36:37 so:0]{ ia0 a2p0 re0 rm0 nos0 ru0 dp0}{unsigned-int fixed}[r0x1002 r0x1006 ] = (unsigned-int fixed)iTemp0 [k2 lr3:48 so:0]{ ia0 a2p0 re1 rm0 nos0 ru0 dp0}{char fixed}{ sir@ __modschar_a_1_2}[r0x1000 ]
 ;	.line	43; "../../libsdcc_mc32/_modschar.c"	return -_moduchar ((unsigned int)a, (unsigned int)-b);

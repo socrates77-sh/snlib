@@ -1,7 +1,7 @@
 ;--------------------------------------------------------
 ; File Created by SN-SDCC : SinoMCU ANSI-C Compiler
 ; Version 1.1.0 (Dec 19 2017) (MINGW32)
-; This file was generated Wed Dec 20 12:04:49 2017
+; This file was generated Fri Jan 12 10:18:26 2018
 ;--------------------------------------------------------
 ; MC35 port for the RISC core
 ;--------------------------------------------------------
@@ -187,7 +187,7 @@ _00112_DS_
 _00131_DS_
 	JBSET	PFLAG,2
 	GOTO	_00111_DS_
-;;genSkipc:3223: created from rifx:00DD608C
+;;genSkipc:3223: created from rifx:00DE608C
 ;;[ICODE] ../../libsdcc_mc35/_modulong.c:46: 	if iTemp6 [k11 lr22:23 so:0]{ ia0 a2p0 re0 rm0 nos0 ru0 dp0}{char fixed} != 0 goto _iffalse_1($7)
 ;;[ICODE] ../../libsdcc_mc35/_modulong.c:47: 	iTemp0 [k2 lr3:32 so:0]{ ia0 a2p0 re1 rm0 nos0 ru0 dp0}{unsigned-long-int fixed}{ sir@ __modulong_a_1_1}[r0x1000 r0x1001 r0x1002 r0x1003 ] = iTemp0 [k2 lr3:32 so:0]{ ia0 a2p0 re1 rm0 nos0 ru0 dp0}{unsigned-long-int fixed}{ sir@ __modulong_a_1_1}[r0x1000 r0x1001 r0x1002 r0x1003 ] - iTemp1 [k4 lr4:30 so:0]{ ia0 a2p0 re1 rm0 nos0 ru0 dp0}{unsigned-long-int fixed}{ sir@ __modulong_b_1_1}[r0x1004 r0x1005 r0x1006 r0x1007 ]
 ;	.line	47; "../../libsdcc_mc35/_modulong.c"	a -= b;

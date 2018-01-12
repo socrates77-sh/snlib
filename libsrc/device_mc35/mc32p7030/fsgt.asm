@@ -1,7 +1,7 @@
 ;--------------------------------------------------------
 ; File Created by SN-SDCC : SinoMCU ANSI-C Compiler
 ; Version 1.1.0 (Dec 19 2017) (MINGW32)
-; This file was generated Wed Dec 20 12:04:44 2017
+; This file was generated Fri Jan 12 10:18:20 2018
 ;--------------------------------------------------------
 ; MC35 port for the RISC core
 ;--------------------------------------------------------
@@ -197,7 +197,7 @@ ___fsgt	;Function start
 	BCLR	PFLAG,2
 	JBSET	PFLAG,2
 	GOTO	_00108_DS_
-;;genSkipc:3223: created from rifx:00DD608C
+;;genSkipc:3223: created from rifx:00DE608C
 ;;[ICODE] ../../libsdcc_mc35/fsgt.c:62: 	if iTemp9 [k18 lr11:12 so:0]{ ia0 a2p0 re0 rm0 nos0 ru0 dp0}{char fixed} == 0 goto _iffalse_1($4)
 ;;[ICODE] ../../libsdcc_mc35/fsgt.c:62: 	iTemp10 [k19 lr13:14 so:0]{ ia0 a2p0 re0 rm1 nos0 ru0 dp0}{volatile-long-int near* fixed}[remat] = &[___fsgt_fl2_1_22 [k10 lr0:0 so:0]{ ia0 a2p0 re0 rm0 nos0 ru0 dp0}{volatile-struct float_long fixed}]
 ;;[ICODE] ../../libsdcc_mc35/fsgt.c:62: 	iTemp12 [k22 lr14:15 so:0]{ ia0 a2p0 re0 rm0 nos0 ru0 dp0}{volatile-long-int fixed}[r0x1000 r0x1001 r0x1002 r0x1003 ] = @[iTemp10 [k19 lr13:14 so:0]{ ia1 a2p0 re0 rm1 nos0 ru0 dp0}{volatile-long-int near* fixed}[remat] + 0x0 {const-unsigned-char literal}]
@@ -216,7 +216,7 @@ ___fsgt	;Function start
 	BCLR	PFLAG,2
 	JBSET	PFLAG,2
 	GOTO	_00108_DS_
-;;genSkipc:3223: created from rifx:00DD608C
+;;genSkipc:3223: created from rifx:00DE608C
 ;;[ICODE] ../../libsdcc_mc35/fsgt.c:62: 	if iTemp13 [k23 lr15:16 so:0]{ ia0 a2p0 re0 rm0 nos0 ru0 dp0}{char fixed} == 0 goto _iffalse_1($4)
 ;;[ICODE] ../../libsdcc_mc35/fsgt.c:63: 	iTemp14 [k24 lr17:18 so:0]{ ia0 a2p0 re0 rm1 nos0 ru0 dp0}{volatile-long-int near* fixed}[remat] = &[___fsgt_fl2_1_22 [k10 lr0:0 so:0]{ ia0 a2p0 re0 rm0 nos0 ru0 dp0}{volatile-struct float_long fixed}]
 ;;[ICODE] ../../libsdcc_mc35/fsgt.c:63: 	iTemp16 [k27 lr18:21 so:0]{ ia0 a2p0 re0 rm0 nos0 ru0 dp0}{volatile-long-int fixed}[r0x1000 r0x1001 r0x1002 r0x1003 ] = @[iTemp14 [k24 lr17:18 so:0]{ ia1 a2p0 re0 rm1 nos0 ru0 dp0}{volatile-long-int near* fixed}[remat] + 0x0 {const-unsigned-char literal}]
@@ -269,7 +269,7 @@ ___fsgt	;Function start
 _00122_DS_
 	JBCLR	PFLAG,2
 	GOTO	_00106_DS_
-;;genSkipc:3223: created from rifx:00DD608C
+;;genSkipc:3223: created from rifx:00DE608C
 ;;[ICODE] ../../libsdcc_mc35/fsgt.c:63: 	if iTemp20 [k32 lr21:22 so:0]{ ia0 a2p0 re0 rm0 nos0 ru0 dp0}{char fixed} == 0 goto _iffalse_0($2)
 ;;[ICODE] ../../libsdcc_mc35/fsgt.c:64: 	ret 0x1 {const-unsigned-char literal}
 ;	.line	64; "../../libsdcc_mc35/fsgt.c"	return (1);
@@ -334,7 +334,7 @@ _00108_DS_
 _00123_DS_
 	JBCLR	PFLAG,2
 	GOTO	_00111_DS_
-;;genSkipc:3223: created from rifx:00DD608C
+;;genSkipc:3223: created from rifx:00DE608C
 ;;[ICODE] ../../libsdcc_mc35/fsgt.c:68: 	if iTemp27 [k41 lr31:32 so:0]{ ia0 a2p0 re0 rm0 nos0 ru0 dp0}{char fixed} == 0 goto _iffalse_2($7)
 ;;[ICODE] ../../libsdcc_mc35/fsgt.c:69: 	ret 0x1 {const-unsigned-char literal}
 ;	.line	69; "../../libsdcc_mc35/fsgt.c"	return (1);

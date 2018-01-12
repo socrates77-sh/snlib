@@ -1,4 +1,5 @@
 SDCC_HOME=/e/tools/sn-sdcc
+LIB_HOME=/e/tools/snlib
 GPUTILS_HOME=/e/tools/snutils
 path="$GPUTILS_HOME/gpasm"
 sdcc_bin=$SDCC_HOME/bin/sdcc
@@ -120,12 +121,12 @@ done
 echo >> $out
 echo >> $out
 
-echo 'SDCC_ARG = -V --verbose -mmc32 -p'$processor' -Wa-Ie:\tools\sn-sdcc\share\header \' >> $out
-echo '    -I'$SDCC_HOME'/share/include \' >> $out
+echo 'SDCC_ARG = -V --verbose -mmc32 -p'$processor' -Wa-Ie:\tools\snlib\share\header \' >> $out
+echo '    -I'$LIB_HOME'/share/include \' >> $out
 echo '    --std-c99 --i-code-in-asm  -c -o ' >> $out
 echo >> $out
 
-echo 'ASM_ARG = -p '$processor' -I'$SDCC_HOME'/share/include -I. -I'$generic_lib' -c -o ' >> $out
+echo 'ASM_ARG = -p '$processor' -I'$LIB_HOME'/share/include -I. -I'$generic_lib' -c -o ' >> $out
 echo >> $out
 
 echo 'all : $(OBJ) $(LIB)' >> $out
@@ -134,7 +135,7 @@ echo >> $out
 
 printf '$(LIB) : $(OBJ)\n' >> $out
 printf '\t$(LIB_EXE) -c $(LIB) *.o\n' >> $out
-printf '\t/bin/cp -av $(LIB) '$SDCC_HOME'/share/lib \n' >> $out
+printf '\t/bin/cp -av $(LIB) '$LIB_HOME'/share/lib \n' >> $out
 echo >> $out
 
 for file in $p_file; do

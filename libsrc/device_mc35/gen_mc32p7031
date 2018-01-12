@@ -1,5 +1,5 @@
 DEVICE=mc32p7031
-INCF=7031
+INCF=7011
 
 if [ ! -d $DEVICE ]
 then 

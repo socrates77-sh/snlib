@@ -1,7 +1,7 @@
 ;--------------------------------------------------------
 ; File Created by SN-SDCC : SinoMCU ANSI-C Compiler
 ; Version 1.1.0 (Dec 19 2017) (MINGW32)
-; This file was generated Wed Dec 20 12:01:18 2017
+; This file was generated Fri Jan 12 10:25:28 2018
 ;--------------------------------------------------------
 ; MC35 port for the RISC core
 ;--------------------------------------------------------
@@ -138,7 +138,7 @@ _00112_DS_
 	XCH	r0x1000
 	JBSET	PFLAG,2
 	GOTO	_00111_DS_
-;;genSkipc:3223: created from rifx:00DD608C
+;;genSkipc:3223: created from rifx:00DE608C
 ;;[ICODE] ../../libsdcc_mc35/_moduchar.c:46: 	if iTemp7 [k12 lr23:24 so:0]{ ia0 a2p0 re0 rm0 nos0 ru0 dp0}{char fixed} != 0 goto _iffalse_1($7)
 ;;[ICODE] ../../libsdcc_mc35/_moduchar.c:47: 	iTemp0 [k2 lr3:33 so:0]{ ia0 a2p0 re1 rm0 nos0 ru0 dp0}{unsigned-char fixed}{ sir@ __moduchar_a_1_1}[r0x1000 ] = iTemp0 [k2 lr3:33 so:0]{ ia0 a2p0 re1 rm0 nos0 ru0 dp0}{unsigned-char fixed}{ sir@ __moduchar_a_1_1}[r0x1000 ] - iTemp1 [k4 lr4:31 so:0]{ ia0 a2p0 re1 rm0 nos0 ru0 dp0}{unsigned-char fixed}{ sir@ __moduchar_b_1_1}[r0x1001 ]
 ;	.line	47; "../../libsdcc_mc35/_moduchar.c"	a -= b;

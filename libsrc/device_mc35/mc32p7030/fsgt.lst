@@ -1,4 +1,4 @@
-gpasm-2.0.0_beta2 (Nov  6 2017)fsgt.asm           2017-12-20  12:04:44         PAGE  1
+gpasm-2.0.0_beta2 (Nov  6 2017)fsgt.asm           2018-1-12  10:18:20          PAGE  1
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -7,7 +7,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                       00001 ;--------------------------------------------------------
                       00002 ; File Created by SN-SDCC : SinoMCU ANSI-C Compiler
                       00003 ; Version 1.1.0 (Dec 19 2017) (MINGW32)
-                      00004 ; This file was generated Wed Dec 20 12:04:44 2017
+                      00004 ; This file was generated Fri Jan 12 10:18:20 2018
                       00005 ;--------------------------------------------------------
                       00006 ; MC35 port for the RISC core
                       00007 ;--------------------------------------------------------
@@ -206,7 +206,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
 0028   4286           00197         BCLR    PFLAG,2
 0029   5A86           00198         JBSET   PFLAG,2
 002A   8000           00199         GOTO    _00108_DS_
-                      00200 ;;genSkipc:3223: created from rifx:00DD608C
+                      00200 ;;genSkipc:3223: created from rifx:00DE608C
                       00201 ;;[ICODE] ../../libsdcc_mc35/fsgt.c:62:         if iTemp9 [k18 lr11:12 so:0]{ ia0 a2p0 re0 rm0 nos0 ru0 dp0}{char fixed} == 0 goto _iffalse_1($4)
                       00202 ;;[ICODE] ../../libsdcc_mc35/fsgt.c:62:         iTemp10 [k19 lr13:14 so:0]{ ia0 a2p0 re0 rm1 nos0 ru0 dp0}{volatile-long-int near* fixed}[remat] = &[___fsgt_fl2_1_22 [k10 lr0:0 so:0]{ ia0 a2p0 re0 rm0 nos0 ru0 dp0}{volatile-struct float_long fixed}]
                       00203 ;;[ICODE] ../../libsdcc_mc35/fsgt.c:62:         iTemp12 [k22 lr14:15 so:0]{ ia0 a2p0 re0 rm0 nos0 ru0 dp0}{volatile-long-int fixed}[r0x1000 r0x1001 r0x1002 r0x1003 ] = @[iTemp10 [k19 lr13:14 so:0]{ ia1 a2p0 re0 rm1 nos0 ru0 dp0}{volatile-long-int near* fixed}[remat] + 0x0 {const-unsigned-char literal}]
@@ -225,7 +225,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
 0035   4286           00216         BCLR    PFLAG,2
 0036   5A86           00217         JBSET   PFLAG,2
 0037   8000           00218         GOTO    _00108_DS_
-                      00219 ;;genSkipc:3223: created from rifx:00DD608C
+                      00219 ;;genSkipc:3223: created from rifx:00DE608C
                       00220 ;;[ICODE] ../../libsdcc_mc35/fsgt.c:62:         if iTemp13 [k23 lr15:16 so:0]{ ia0 a2p0 re0 rm0 nos0 ru0 dp0}{char fixed} == 0 goto _iffalse_1($4)
                       00221 ;;[ICODE] ../../libsdcc_mc35/fsgt.c:63:         iTemp14 [k24 lr17:18 so:0]{ ia0 a2p0 re0 rm1 nos0 ru0 dp0}{volatile-long-int near* fixed}[remat] = &[___fsgt_fl2_1_22 [k10 lr0:0 so:0]{ ia0 a2p0 re0 rm0 nos0 ru0 dp0}{volatile-struct float_long fixed}]
                       00222 ;;[ICODE] ../../libsdcc_mc35/fsgt.c:63:         iTemp16 [k27 lr18:21 so:0]{ ia0 a2p0 re0 rm0 nos0 ru0 dp0}{volatile-long-int fixed}[r0x1000 r0x1001 r0x1002 r0x1003 ] = @[iTemp14 [k24 lr17:18 so:0]{ ia1 a2p0 re0 rm1 nos0 ru0 dp0}{volatile-long-int near* fixed}[remat] + 0x0 {const-unsigned-char literal}]
@@ -278,7 +278,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
 0062                  00269 _00122_DS_
 0062   5286           00270         JBCLR   PFLAG,2
 0063   8000           00271         GOTO    _00106_DS_
-                      00272 ;;genSkipc:3223: created from rifx:00DD608C
+                      00272 ;;genSkipc:3223: created from rifx:00DE608C
                       00273 ;;[ICODE] ../../libsdcc_mc35/fsgt.c:63:         if iTemp20 [k32 lr21:22 so:0]{ ia0 a2p0 re0 rm0 nos0 ru0 dp0}{char fixed} == 0 goto _iffalse_0($2)
                       00274 ;;[ICODE] ../../libsdcc_mc35/fsgt.c:64:         ret 0x1 {const-unsigned-char literal}
                       00275 ;       .line   64; "../../libsdcc_mc35/fsgt.c" return (1);
@@ -343,7 +343,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
 0092                  00334 _00123_DS_
 0092   5286           00335         JBCLR   PFLAG,2
 0093   8000           00336         GOTO    _00111_DS_
-                      00337 ;;genSkipc:3223: created from rifx:00DD608C
+                      00337 ;;genSkipc:3223: created from rifx:00DE608C
                       00338 ;;[ICODE] ../../libsdcc_mc35/fsgt.c:68:         if iTemp27 [k41 lr31:32 so:0]{ ia0 a2p0 re0 rm0 nos0 ru0 dp0}{char fixed} == 0 goto _iffalse_2($7)
                       00339 ;;[ICODE] ../../libsdcc_mc35/fsgt.c:69:         ret 0x1 {const-unsigned-char literal}
                       00340 ;       .line   69; "../../libsdcc_mc35/fsgt.c" return (1);
@@ -365,7 +365,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                       00356 ;         152+    0 =   152 instructions (  304 byte)
                       00357 
                       00358         end
-gpasm-2.0.0_beta2 (Nov  6 2017)fsgt.asm           2017-12-20  12:04:44         PAGE  2
+gpasm-2.0.0_beta2 (Nov  6 2017)fsgt.asm           2018-1-12  10:18:20          PAGE  2
 
 
 SYMBOL TABLE

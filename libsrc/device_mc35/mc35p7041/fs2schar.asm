@@ -1,7 +1,7 @@
 ;--------------------------------------------------------
 ; File Created by SN-SDCC : SinoMCU ANSI-C Compiler
 ; Version 1.1.0 (Dec 19 2017) (MINGW32)
-; This file was generated Wed Dec 20 12:01:12 2017
+; This file was generated Fri Jan 12 10:25:17 2018
 ;--------------------------------------------------------
 ; MC35 port for the RISC core
 ;--------------------------------------------------------
@@ -171,7 +171,7 @@ ___fs2schar	;Function start
 _00115_DS_
 	JBSET	PFLAG,2
 	GOTO	_00106_DS_
-;;genSkipc:3223: created from rifx:00DD608C
+;;genSkipc:3223: created from rifx:00DE608C
 ;;[ICODE] ../../libsdcc_mc35/fs2schar.c:36: 	if iTemp3 [k9 lr7:8 so:0]{ ia0 a2p0 re0 rm0 nos0 ru0 dp0}{char fixed} != 0 goto _iffalse_0($2)
 ;;[ICODE] ../../libsdcc_mc35/fs2schar.c:37: 	ret 0x7f {const-unsigned-char literal}
 ;	.line	37; "../../libsdcc_mc35/fs2schar.c"	return SCHAR_MAX;
@@ -207,7 +207,7 @@ _00106_DS_
 _00116_DS_
 	JBCLR	PFLAG,2
 	GOTO	_00108_DS_
-;;genSkipc:3223: created from rifx:00DD608C
+;;genSkipc:3223: created from rifx:00DE608C
 ;;[ICODE] ../../libsdcc_mc35/fs2schar.c:38: 	if iTemp4 [k10 lr11:12 so:0]{ ia0 a2p0 re0 rm0 nos0 ru0 dp0}{char fixed} != 0 goto _iffalse_1($4)
 ;;[ICODE] ../../libsdcc_mc35/fs2schar.c:39: 	ret 0x80 {const-unsigned-char literal}
 ;	.line	39; "../../libsdcc_mc35/fs2schar.c"	return -SCHAR_MIN;

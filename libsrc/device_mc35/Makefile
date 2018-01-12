@@ -1,4 +1,4 @@
-DEVICE = mc32p7031
+DEVICE = mc35p7041
 OUTPUT = dev_$(DEVICE)
 
 all : $(OUTPUT) *.c *.h

@@ -1,7 +1,7 @@
 ;--------------------------------------------------------
 ; File Created by SN-SDCC : SinoMCU ANSI-C Compiler
 ; Version 1.1.0 (Dec 19 2017) (MINGW32)
-; This file was generated Thu Jan 11 14:01:29 2018
+; This file was generated Fri Jan 12 10:28:27 2018
 ;--------------------------------------------------------
 ; MC32 port for the RISC core
 ;--------------------------------------------------------
@@ -154,7 +154,7 @@ _00112_DS_
 _00131_DS_
 	JBSET	PFLAG,0
 	GOTO	_00111_DS_
-;;genSkipc:3195: created from rifx:00DD608C
+;;genSkipc:3195: created from rifx:00DE608C
 ;;[ICODE] ../../libsdcc_mc32/_moduint.c:46: 	if iTemp7 [k12 lr23:24 so:0]{ ia0 a2p0 re0 rm0 nos0 ru0 dp0}{char fixed} != 0 goto _iffalse_1($7)
 ;;[ICODE] ../../libsdcc_mc32/_moduint.c:47: 	iTemp0 [k2 lr3:33 so:0]{ ia0 a2p0 re1 rm0 nos0 ru0 dp0}{unsigned-int fixed}{ sir@ __moduint_a_1_1}[r0x1000 r0x1001 ] = iTemp0 [k2 lr3:33 so:0]{ ia0 a2p0 re1 rm0 nos0 ru0 dp0}{unsigned-int fixed}{ sir@ __moduint_a_1_1}[r0x1000 r0x1001 ] - iTemp1 [k4 lr4:31 so:0]{ ia0 a2p0 re1 rm0 nos0 ru0 dp0}{unsigned-int fixed}{ sir@ __moduint_b_1_1}[r0x1002 r0x1003 ]
 ;	.line	47; "../../libsdcc_mc32/_moduint.c"	a -= b;

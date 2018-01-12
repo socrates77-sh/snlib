@@ -1,4 +1,4 @@
-gpasm-2.0.0_beta2 (Nov  6 2017)_divulong.asm      2018-1-11  15:10:18          PAGE  1
+gpasm-2.0.0_beta2 (Nov  6 2017)_divulong.asm      2018-1-12  10:31:08          PAGE  1
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -7,7 +7,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                       00001 ;--------------------------------------------------------
                       00002 ; File Created by SN-SDCC : SinoMCU ANSI-C Compiler
                       00003 ; Version 1.1.0 (Dec 19 2017) (MINGW32)
-                      00004 ; This file was generated Thu Jan 11 15:10:18 2018
+                      00004 ; This file was generated Fri Jan 12 10:31:08 2018
                       00005 ;--------------------------------------------------------
                       00006 ; MC32 port for the RISC core
                       00007 ;--------------------------------------------------------
@@ -214,7 +214,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
 004F                  00205 _00129_DS_
 004F   E1B7           00206         JBSET   PFLAG,0
 0050   2000 2300      00207         LGOTO   _00111_DS_
-                      00208 ;;genSkipc:3195: created from rifx:00DD608C
+                      00208 ;;genSkipc:3195: created from rifx:00DE608C
                       00209 ;;[ICODE] ../../libsdcc_mc32l/_divulong.c:48:   if iTemp7 [k13 lr21:22 so:0]{ ia0 a2p0 re0 rm0 nos0 ru0 dp0}{char fixed} != 0 goto _iffalse_1($7)
                       00210 ;;[ICODE] ../../libsdcc_mc32l/_divulong.c:49:   iTemp2 [k6 lr5:34 so:0]{ ia0 a2p0 re1 rm0 nos0 ru0 dp0}{unsigned-long-int fixed}{ sir@ __divulong_result_1_2}[r0x1008 r0x1009 r0x100A r0x100B ] = iTemp2 [k6 lr5:34 so:0]{ ia0 a2p0 re1 rm0 nos0 ru0 dp0}{unsigned-long-int fixed}{ sir@ __divulong_result_1_2}[r0x1008 r0x1009 r0x100A r0x100B ] + iTemp3 [k8 lr6:32 so:0]{ ia0 a2p0 re1 rm0 nos0 ru0 dp0}{unsigned-long-int fixed}{ sir@ __divulong_mask_1_2}[r0x100C r0x100D r0x100E r0x100F ]
                       00211 ;       .line   49; "../../libsdcc_mc32l/_divulong.c"   result += mask;
@@ -290,7 +290,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                       00281 ;         120+    0 =   120 instructions (  240 byte)
                       00282 
                       00283         end
-gpasm-2.0.0_beta2 (Nov  6 2017)_divulong.asm      2018-1-11  15:10:18          PAGE  2
+gpasm-2.0.0_beta2 (Nov  6 2017)_divulong.asm      2018-1-12  10:31:08          PAGE  2
 
 
 SYMBOL TABLE

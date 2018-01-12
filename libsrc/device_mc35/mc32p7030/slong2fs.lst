@@ -1,4 +1,4 @@
-gpasm-2.0.0_beta2 (Nov  6 2017)slong2fs.asm       2017-12-20  12:04:51         PAGE  1
+gpasm-2.0.0_beta2 (Nov  6 2017)slong2fs.asm       2018-1-12  10:18:29          PAGE  1
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -7,7 +7,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                       00001 ;--------------------------------------------------------
                       00002 ; File Created by SN-SDCC : SinoMCU ANSI-C Compiler
                       00003 ; Version 1.1.0 (Dec 19 2017) (MINGW32)
-                      00004 ; This file was generated Wed Dec 20 12:04:51 2017
+                      00004 ; This file was generated Fri Jan 12 10:18:29 2018
                       00005 ;--------------------------------------------------------
                       00006 ; MC35 port for the RISC core
                       00007 ;--------------------------------------------------------
@@ -151,7 +151,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
 0009   4286           00142         BCLR    PFLAG,2
 000A   5A86           00143         JBSET   PFLAG,2
 000B   8000           00144         GOTO    _00106_DS_
-                      00145 ;;genSkipc:3223: created from rifx:00DD608C
+                      00145 ;;genSkipc:3223: created from rifx:00DE608C
                       00146 ;;[ICODE] ../../libsdcc_mc35/slong2fs.c:35:     if iTemp1 [k4 lr4:5 so:0]{ ia0 a2p0 re0 rm0 nos0 ru0 dp0}{char fixed} == 0 goto _iffalse_0($2)
                       00147 ;;[ICODE] ../../libsdcc_mc35/slong2fs.c:36:     iTemp2 [k6 lr6:7 so:0]{ ia0 a2p0 re0 rm0 nos0 ru1 dp0}{long-int fixed}[r0x1004 r0x1005 r0x1006 r0x1007 ] = - iTemp0 [k2 lr3:12 so:0]{ ia0 a2p0 re1 rm0 nos0 ru0 dp0}{long-int fixed}{ sir@ ___slong2fs_sl_1_21}[r0x1000 r0x1001 r0x1002 r0x1003 ]
                       00148 ;       .line   36; "../../libsdcc_mc35/slong2fs.c"     return -__ulong2fs(-sl);
@@ -250,7 +250,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                       00241 ;          87+    0 =    87 instructions (  174 byte)
                       00242 
                       00243         end
-gpasm-2.0.0_beta2 (Nov  6 2017)slong2fs.asm       2017-12-20  12:04:51         PAGE  2
+gpasm-2.0.0_beta2 (Nov  6 2017)slong2fs.asm       2018-1-12  10:18:29          PAGE  2
 
 
 SYMBOL TABLE
