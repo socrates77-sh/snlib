@@ -68,7 +68,8 @@ void bit_define()
 			for(j = 0; j <8; j++)
 			{
 				if(all_reg[i].bit[j].n == 1)
-					fprintf(hInc, "%-10s\t\tEQU\t\tH'%04X'\n", all_reg[i].bit[j].name, j);
+					//fprintf(hInc, "%-10s\t\tEQU\t\tH'%04X'\n", all_reg[i].bit[j].name, j);
+					fprintf(hInc, "#define \t%-10s\t%s,%d\n", all_reg[i].bit[j].name, all_reg[i].name, j);
 			}
 		}
 	}

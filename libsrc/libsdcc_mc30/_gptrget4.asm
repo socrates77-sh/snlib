@@ -85,17 +85,17 @@ __dataptrget4:
 __codeptrget4:
 	call __codeptrget1
 	movra STK02			; temporarily store LSB
-	jzar STK01			; increment low address byte
+	jzr STK01			; increment low address byte
 	decr STK00			; undo increment of high address byte if low byte did not overflow
 	incr STK00			; increment high address byte
 	call __codeptrget1
 	movra STK03			; temporarily store 2nd byte
-	jzar STK01			; increment low address byte
+	jzr STK01			; increment low address byte
 	decr STK00			; undo increment of high address byte if low byte did not overflow
 	incr STK00			; increment high address byte
 	call __codeptrget1
 	movra STK04			; temporarily store 3rd byte
-	jzar STK01			; increment low address byte
+	jzr STK01			; increment low address byte
 	decr STK00			; undo increment of high address byte if low byte did not overflow
 	incr STK00			; increment high address byte
 	call __codeptrget1

@@ -43,3 +43,23 @@ processor 3316
 	bankmsk		0x00
 	config		0x8000 0x8001
 	memmap		0x00 0x7f 0x000
+
+processor 8K7323
+        program         8K
+        data            256
+        eeprom          0
+        io              22
+        maxram          0x1ff
+        bankmsk         0x00
+        config          0x8000 0x8001 0x8002 0x8003 0x8004
+        memmap          0x00 0xff 0x000
+
+processor 4K7323
+        program         4K
+        data            256
+        eeprom          0
+        io              22
+        maxram          0x1ff
+        bankmsk         0x00
+        config          0x8000 0x8001 0x8002 0x8003 0x8004
+        memmap          0x00 0xff 0x000
